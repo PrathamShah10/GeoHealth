@@ -19,8 +19,8 @@ import './App.css';
 // `-- web-vitals@2.1.4
 const App = () => {
   return (
-    <div className="App">
-
+    <div className="bg-green-600 p-4 border-2 border-black text-center">
+      GeoHealth
     </div>
   );
 }
