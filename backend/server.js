@@ -12,21 +12,21 @@ mongoose.connection.on("connected", () => {
   console.log("connected to mongoDB");
 });
 
-// import "./modals/User.js";
-// import { typeDefs } from "./schema.js";
-// import { resolvers } from "./resolvers.js";
+import "./modal/User.js";
+import { typeDefs } from "./schema.js";
+import { resolvers } from "./resolvers.js";
 
-// const server = new ApolloServer({
-//   typeDefs,
-//   resolvers,
-// });
-// const { url } = await startStandaloneServer(server, {
-//   context: async ({ req }) => {
-//     const { authorization } = req.headers;
-//     if (authorization) {
-//       const { userId } = jwt.verify(authorization, "avbdd!@#$]");
-//       return { userId: userId };
-//     }
-//   },
-// });
-// console.log(`🚀 Server ready at ${url}`);
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+});
+const { url } = await startStandaloneServer(server, {
+  context: async ({ req }) => {
+    const { authorization } = req.headers;
+    if (authorization) {
+      const { userId } = jwt.verify(authorization, "Az!@#$%bd1_@]_b");
+      return { userId: userId };
+    }
+  },
+});
+console.log(`🚀 Server ready at ${url}`);
