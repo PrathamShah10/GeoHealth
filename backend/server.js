@@ -4,7 +4,7 @@ import { Server } from "socket.io";
 import jwt from "jsonwebtoken";
 import mongoose from "mongoose";
 
-mongoose.connect("mongodb://localhost:27017/geoHealthDB", {
+mongoose.connect("mongodb://0.0.0.0:27017/geoHealthDB", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

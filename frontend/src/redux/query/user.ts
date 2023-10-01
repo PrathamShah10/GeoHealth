@@ -10,3 +10,26 @@ export const SIGNUP_USER = gql`
     }
   }
 `;
+
+export const SIGNIN_USER = gql`
+  mutation SignIn($signDetails: signInput!) {
+    signInUser(signDetails: $signDetails) {
+      token
+      userDetails {
+        name
+        email
+        username
+        diseases
+        _id
+      }
+    }
+  }
+`;
+
+export const UPDATE_DISEASES = gql`
+  mutation DiseaseUpdate($diseaseDetails: diseaseInput!) {
+    updateDiseasesInfo(diseaseDetails: $diseaseDetails) {
+      diseases
+    }
+  }
+`;

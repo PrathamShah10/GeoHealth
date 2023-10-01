@@ -6,7 +6,7 @@ export const resolvers = {
   Query: {
     getUsers: async () => {
       return await User.find({});
-    }
+    },
   },
   Mutation: {
     addUser: async (_, { newUserDetails }) => {
@@ -36,7 +36,13 @@ export const resolvers = {
         throw new Error("crediantials invalid");
       }
       const token = jwt.sign({ userId: user._id }, "Az!@#$%bd1_@]_b");
-      return { token: token, userDetails: user, isCustomer: true };
+      return { token: token, userDetails: user };
+    },
+    updateDiseasesInfo: async (_, { diseaseDetails }) => {
+      const user = await User.findOne({ _id: diseaseDetails._id });
+      user.diseases = await diseaseDetails.diseases;
+      await user.save();
+      return user;
     },
   },
 };
