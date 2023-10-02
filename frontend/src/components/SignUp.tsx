@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { SIGNUP_USER } from "../redux/query/user";
 import ClipSpinner from "../common/ClipSpinner";
@@ -52,7 +53,7 @@ const SignUp = () => {
               name="name"
               onChange={handleChange}
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
-              placeholder="Enter your Name"
+              placeholder="Enter your name"
             />
           </div>
           <div className="mb-4">
@@ -95,13 +96,10 @@ const SignUp = () => {
             type="submit"
             className="w-full bg-indigo-500 text-white py-2 px-4 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600"
           >
-            {!loading ? (
-              "Register"
-            ) : (
-              <ClipSpinner isLoading={loading} />
-            )}
+            {!loading ? "Register" : <ClipSpinner isLoading={loading} />}
           </button>
         </form>
+        <Link to="/">SignIn kijiye agar register na krna ho toh bhai</Link>
       </div>
     </div>
   );
