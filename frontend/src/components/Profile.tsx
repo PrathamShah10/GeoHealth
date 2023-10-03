@@ -4,7 +4,7 @@ import { useAppSelector } from "../hooks/redux";
 const Profile = () => {
   const { user, diseases } = useAppSelector((state) => state.user);
   return (
-    <div>
+    <div className="backpanel bg-white">
       <div>name: {user?.name}</div>
       <div>username: {user?.username}</div>
       <div>email: {user?.email}</div>
