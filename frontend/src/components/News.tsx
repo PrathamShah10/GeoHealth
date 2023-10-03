@@ -9,9 +9,9 @@ const News = () => {
 
   useEffect(() => {
     const getNews = async () => {
-      const API_ENDPOINT = `https://newsapi.org/v2/top-headlines?country=in&category=health&q=${state}`;
-      const res = await axios.get(`${API_ENDPOINT}&apiKey=${API_KEY}`);
-      setNewsArticles(res.data.articles);
+      const API_ENDPOINT = `https://newsdata.io/api/1/news?apikey=${API_KEY}&category=health&q=${state}&language=en`;
+      const res = await axios.get(API_ENDPOINT);
+      setNewsArticles(res.data.results);
     };
     getNews();
   }, [state]);
