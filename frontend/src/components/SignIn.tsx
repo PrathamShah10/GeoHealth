@@ -32,9 +32,10 @@ const SignIn = () => {
     value: string;
   };
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-200">
-      <div className="max-w-md w-full p-6 bg-white rounded-lg shadow-lg">
-        <h2 className="text-2xl font-semibold mb-6">Login</h2>
+    
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="w-1/4 p-6 bg-white rounded-lg shadow-lg">
+        <h2 className="text-2xl text-center font-semibold mb-6">Login</h2>
         <form onSubmit={(e) => handleSubmit(e)}>
           <div className="mb-4">
             <label className="block mb-2 text-sm font-medium text-gray-800">
@@ -62,14 +63,16 @@ const SignIn = () => {
           </div>
           <button
             type="submit"
-            className="w-full bg-indigo-500 text-white py-2 px-4 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600"
+            className="w-full bg-sea-green-600 text-white py-2 px-4 rounded-md hover:bg-olive-700 focus:outline-none focus:bg-"
           >
             {!isPending ? "SignIn" : <ClipSpinner isLoading={isPending} />}
           </button>
         </form>
-        <Link to="/register">
-          Please Sign Up if Account does'nt exist
+        <div className="links w-full text-center mt-5">
+        <Link  to="/register">
+          Dont Have an Account..? <span className="andu  text-sea-green-600 font-bold">Register</span> 
         </Link>
+        </div>
       </div>
     </div>
   );
