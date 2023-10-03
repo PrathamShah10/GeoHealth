@@ -68,7 +68,7 @@ const SignIn = () => {
           </button>
         </form>
         <Link to="/register">
-          SignUp kijiye agar SignIn na krna ho toh bhai
+          Please Sign Up if Account does'nt exist
         </Link>
       </div>
     </div>

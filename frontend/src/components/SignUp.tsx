@@ -99,7 +99,7 @@ const SignUp = () => {
             {!loading ? "Register" : <ClipSpinner isLoading={loading} />}
           </button>
         </form>
-        <Link to="/">SignIn kijiye agar register na krna ho toh bhai</Link>
+        <Link to="/">Sign In if Account alrady exists</Link>
       </div>
     </div>
   );
