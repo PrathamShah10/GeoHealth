@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {API_KEY} from '../variables'
 import axios from "axios";
 import { useParams } from "react-router";
 
@@ -8,7 +9,6 @@ const News = () => {
 
   useEffect(() => {
     const getNews = async () => {
-      const API_KEY = "9c6672843352485fbf99ce6139ede318";
       const API_ENDPOINT = `https://newsapi.org/v2/top-headlines?country=in&category=health&q=${state}`;
       const res = await axios.get(`${API_ENDPOINT}&apiKey=${API_KEY}`);
       setNewsArticles(res.data.articles);
