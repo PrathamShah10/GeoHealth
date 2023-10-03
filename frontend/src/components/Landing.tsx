@@ -38,14 +38,18 @@ const Landing = () => {
         </div>
         <div className="cont-right w-1/2 flex">
           <div className="images w-2/3">
-            {/* <div className="note flex">
-              <div className="info w-48 rounded-lg align-middle mt-auto mb-auto -mr-20 ml-auto shadow-lg h-max p-6">Information about the diseases in your vicinity</div>
-              <img className="imgc mt-10 ml-auto w-64 -mr-32 shadow-lg relative z-10 rounded-full" src="./cartoon.jpg " alt="" />
+          <div>
+              <img className="h-96" src="./food.png" alt="" />
             </div>
-            <div className="note flex"> 
-              <div className="info w-48 rounded-lg align-middle mt-auto mb-auto -mr-20 ml-auto shadow-lg h-max p-6">afasfa</div>
-              <img className="imgc mt-10 ml-auto w-64 -mr-32 shadow-lg relative z-10 rounded-full" src="./cartoon.jpg " alt="" />
-            </div> */}
+           
+            <div className="note flex">
+              
+              <img className="imgc -mt-20 ml-auto h-72 -mr-32 shadow-lg relative z-10 rounded-full" src="./cartoon.jpg " alt="" />
+            </div>
+            <div>
+              <img className="h-72 -mt-20"  src="./protocols.png" alt="" />
+            </div>
+           
           </div>
           <div className="sidebar ml-auto mr-0 w-1/3 h-screen bg-gradient-to-r from-olive-600 to-sea-green-600 ..."></div>
 

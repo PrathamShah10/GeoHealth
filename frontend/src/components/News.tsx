@@ -1,12 +1,29 @@
 import React, { useState, useEffect } from "react";
-import {API_KEY} from '../variables'
+import { API_KEY } from '../variables'
 import axios from "axios";
 import { useParams } from "react-router";
 
+// import { indianStates } from "../common/constants";
+// import { Link } from "react-router-dom";
+// import Select from "react-select";
+
+// interface State {
+//   label: string;
+//   value: string;
+// }
 const News = () => {
   const [newsArticles, setNewsArticles] = useState<any[] | null>(null);
   const { state } = useParams();
+  // const [selectedState, setSelectedState] = useState<State | null>(null);
 
+  // const stateOptions: State[] = indianStates.map((state) => ({
+  //   label: state,
+  //   value: state,
+  // }));
+
+  // const handleStateChange = (selectedOption: State | null) => {
+  //   setSelectedState(selectedOption);
+  // };
   useEffect(() => {
     const getNews = async () => {
       const API_ENDPOINT = `https://newsdata.io/api/1/news?apikey=${API_KEY}&category=health&q=${state}&language=en`;
@@ -17,7 +34,29 @@ const News = () => {
   }, [state]);
 
   return (
-    <div className="min-h-screen bg-transparent">
+    <div className="w-screen justify-center">
+      {/* <div className="w-3/4 mt-20 p-10 ml-auto mr-auto rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+        <div className="">
+          <h1 className="font-bold text-4xl text-sea-green-600">News</h1>
+          <p className="font-bold mt-6 text-xl text-gray-600">Select State</p>
+          <Select
+            options={stateOptions}
+            value={selectedState}
+            onChange={handleStateChange}
+            isSearchable
+            placeholder="Select a state"
+          />
+          {selectedState && (
+            <div>
+              <p className="text-xl font-bold mt-5">News in <span className="text-sea-green-500">{selectedState.label}</span></p>
+            </div>
+          )}
+        </div>
+        <Link to={`/news/${selectedState?.label}`}>
+          <button className="bg-sea-green-500 text-white p-2 font-semibold rounded-full mt-3">View News</button>
+        </Link>
+
+      </div> */}
       <div className="max-w-2xl ml-[50px] px-4 py-8">
         <h1 className="text-blue-600 text-2xl font-bold mb-4">
           Business News Headlines
