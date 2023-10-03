@@ -44,5 +44,16 @@ export const resolvers = {
       await user.save();
       return user;
     },
+    updateUserProfile: async (_, {userDetails}) => {
+      const user = await User.findOne({_id: userDetails._id});
+      if(userDetails.name) {
+        user.name = userDetails.name
+      }
+      if(userDetails.email) {
+        user.email = userDetails.email
+      }
+      await user.save();
+      return user;
+    }
   },
 };
