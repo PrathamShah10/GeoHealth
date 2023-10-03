@@ -2,7 +2,6 @@ import { ComponentType } from "react";
 import SignIn from "./components/SignIn";
 const PrivateRoute = ({
   element: Element,
-  isBuisness = false,
   props,
 }: PrivateRouteProps) => {
   const isAuthenticated = localStorage.getItem("token") !== null;
