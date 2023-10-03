@@ -5,6 +5,7 @@ import SignIn from "./components/SignIn";
 import Home from "./components/Home";
 import PrivateRoute from "./PrivateRoute";
 import Profile from "./components/Profile";
+import News from "./components/News";
 
 export const routes: RouteObject[] = [
   {
@@ -26,5 +27,9 @@ export const routes: RouteObject[] = [
   {
     path: "/profile",
     element: <PrivateRoute element={Profile} />,
+  },
+  {
+    path: "/news/:state",
+    element: <PrivateRoute element={News} />,
   },
 ];
