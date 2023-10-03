@@ -5,6 +5,7 @@ type Query {
 type Mutation {
     addUser(newUserDetails: UserInput!) : User
     signInUser(signDetails: signInput!): UserToken
+    updateDiseasesInfo(diseaseDetails: diseaseInput!): User
 }
 type User {
     _id: ID!
@@ -12,11 +13,11 @@ type User {
     email: String
     username: String
     password: String
+    diseases: [String]
 }
 type UserToken {
     token: String
     userDetails: User
-    isCustomer: Boolean
 }
 input signInput {
     username: String!
@@ -27,5 +28,9 @@ input UserInput {
     email: String!
     username: String!
     password: String!
+}
+input diseaseInput {
+    diseases: [String]!
+    _id: String!
 }
 `;
