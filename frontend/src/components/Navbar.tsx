@@ -2,27 +2,33 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../hooks/redux";
 import { resetUserData } from "../redux/reducer/user";
+
 function Navbar() {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const user = localStorage.getItem("user");
   return (
-    <div className="flex bg-blue-500 flex-row-reverse">
+    <div>
       {user && (
-        <div className="flex">
-          <Link to="/profile">
-            <div>Profile</div>
-          </Link>
-          <div> | </div>
-          <div
-            className="cursor-pointer"
-            onClick={() => {
-              localStorage.clear();
-              dispatch(resetUserData());
-              navigate("/");
-            }}
-          >
-            <div>Logout</div>
+        <div className="sda w-screen bg-white h-16 shadow-lg flex justify-between">
+          <div className="sda w-screen flex justify-between">
+            <img className="logo h-14 ml-5" src="./logo3.png" alt="" />
+            <div className="mini flex">
+              <div><Link to="/profile">
+                  <img className="img h-10 m-3" src="./profile.png" alt="" />
+              </Link>
+              </div>
+              <div
+                className="cursor-pointer"
+                onClick={() => {
+                  localStorage.clear();
+                  dispatch(resetUserData());
+                  navigate("/");
+                }}
+              >
+                <img className="h-10 m-3" src="./arrow.png" alt="" />
+              </div>
+            </div>
           </div>
         </div>
       )}

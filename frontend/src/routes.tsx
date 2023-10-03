@@ -5,11 +5,16 @@ import SignIn from "./components/SignIn";
 import Home from "./components/Home";
 import PrivateRoute from "./PrivateRoute";
 import Profile from "./components/Profile";
+import Landing from "./components/Landing";
 import News from "./components/News";
 
 export const routes: RouteObject[] = [
   {
     path: "/",
+    element: <Landing/>,
+  },
+  {
+    path: "/signin",
     element: <SignIn />,
   },
   {

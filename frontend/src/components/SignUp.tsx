@@ -42,7 +42,7 @@ const SignUp = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-200">
       <div className="max-w-md w-full p-6 bg-white rounded-lg shadow-lg">
-        <h2 className="text-2xl font-semibold mb-6">Registration</h2>
+        <h2 className="text-2xl text-center font-semibold mb-6">Registration</h2>
         <form onSubmit={(e) => handleSubmit(e)}>
           <div className="mb-4">
             <label className="block mb-2 text-sm font-medium text-gray-800">
@@ -94,12 +94,14 @@ const SignUp = () => {
           </div>
           <button
             type="submit"
-            className="w-full bg-indigo-500 text-white py-2 px-4 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600"
+            className="w-full bg-sea-green-600 text-white py-2 px-4 rounded-md hover:bg-olive-700 focus:outline-none focus:bg-"
           >
             {!loading ? "Register" : <ClipSpinner isLoading={loading} />}
           </button>
         </form>
-        <Link to="/">SignIn kijiye agar register na krna ho toh bhai</Link>
+        <div className="lins w-full text-center mt-5">
+        <Link to="/signin">Have an Account..? <span className="andu  text-sea-green-600 font-bold">Sign in</span> </Link>
+        </div>
       </div>
     </div>
   );
