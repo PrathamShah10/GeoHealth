@@ -26,7 +26,11 @@ export const userSlicer = createSlice({
   },
 });
 
-export const { setUserData, setUserDiseases, resetUserData, setIsUserDataPending } =
-  userSlicer.actions;
+export const {
+  setUserData,
+  setUserDiseases,
+  resetUserData,
+  setIsUserDataPending,
+} = userSlicer.actions;
 
 export default userSlicer.reducer;

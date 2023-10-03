@@ -9,19 +9,13 @@ const PersonalHealth: React.FC = () => {
   const [selectedDiseases, setSelectedDiseases] = useState<string[]>(
     diseases || []
   );
-  const [userDiseases, setUserDiseases] = useState<string[]>([]);
-  const [searchInput, setSearchInput] = useState<string>(""); // eslint-disable-line @typescript-eslint/no-unused-vars
   const { user } = useAppSelector((state) => state.user);
   const dispatch = useAppDispatch();
   const handleAddDisease = () => {
-    const newDiseases = selectedDiseases?.filter(
-      (disease) => !userDiseases.includes(disease)
-    );
-    setUserDiseases((prevDiseases) => [...prevDiseases, ...newDiseases]);
-    setSelectedDiseases([]);
-    setSearchInput("");
     if (user?._id)
-      dispatch(setUserDiseasesAction({ _id: user._id, diseases: newDiseases }));
+      dispatch(
+        setUserDiseasesAction({ _id: user._id, diseases: selectedDiseases })
+      );
   };
 
   return (
@@ -46,7 +40,6 @@ const PersonalHealth: React.FC = () => {
               selectedOptions.map((option: any) => option.value)
             )
           }
-          onInputChange={(inputValue: string) => setSearchInput(inputValue)}
           isSearchable
         />
       </div>
