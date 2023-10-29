@@ -33,3 +33,13 @@ export const UPDATE_DISEASES = gql`
     }
   }
 `;
+
+export const UPDATE_USER_PROFILE = gql`
+  mutation updateUserProfile($userDetails: updatedUserInput) {
+    updateUserProfile(userDetails: $userDetails) {
+      name
+      email
+      username
+    }
+  }
+`;
