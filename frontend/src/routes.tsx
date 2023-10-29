@@ -7,6 +7,8 @@ import PrivateRoute from "./PrivateRoute";
 import Profile from "./components/Profile";
 import Landing from "./components/Landing";
 import News from "./components/News";
+import Newspage from "./components/Newspage";
+import StateSearch from "./components/StateSearch";
 
 export const routes: RouteObject[] = [
   {
@@ -32,6 +34,14 @@ export const routes: RouteObject[] = [
   {
     path: "/profile",
     element: <PrivateRoute element={Profile} />,
+  },
+  {
+    path: "/newspage",
+    element: <PrivateRoute element={Newspage} />,
+  },
+  {
+    path: "/food",
+    element: <PrivateRoute element={StateSearch} />,
   },
   {
     path: "/news/:state",
