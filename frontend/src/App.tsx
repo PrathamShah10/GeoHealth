@@ -6,6 +6,7 @@ import { store, persistor } from "./redux/index";
 import "./App.css";
 import { routes } from "./routes";
 import Navbar from "./components/Navbar";
+
 function App() {
   const element = useRoutes(routes);
   return (
@@ -16,7 +17,9 @@ function App() {
           {element}
         </PersistGate>
       </Provider>
+      
     </>
+    
   );
 }
 
