@@ -10,6 +10,7 @@ import News from "./components/News";
 import Newspage from "./components/Newspage";
 import StateSearch from "./components/StateSearch";
 import CommunityChat from "./components/CommunityChat";
+import HospitalFinder from "./components/HospitalFinder";
 
 export const routes: RouteObject[] = [
   {
@@ -52,4 +53,8 @@ export const routes: RouteObject[] = [
     path: "/community-chat",
     element: <PrivateRoute element={CommunityChat} />,
   },
+  {
+    path: "/hospital",
+    element: <PrivateRoute element={HospitalFinder} />,
+  }
 ];

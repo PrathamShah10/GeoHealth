@@ -10,12 +10,12 @@ function Navbar() {
   return (
     <div>
       {user && (
-        <div className="sda w-screen bg-white h-16 shadow-lg flex justify-between">
+        <div className="sda w-screen bg-white h-16 shadow-md flex relative z-10 justify-between">
           <div className="sda w-screen flex justify-between">
 
             <img className="logo h-14 ml-5" src="./logo3.png" alt="" />
             <div className="mini flex">
-              <Link to="/user-home">
+              <Link to="/newspage">
                 <h1 className="mt-4 mr-5 font-semibold text-xl">Home</h1>
               </Link>
               <div><Link to="/profile">
