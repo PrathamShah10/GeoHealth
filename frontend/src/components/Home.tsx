@@ -48,7 +48,7 @@ const Home = () => {
             </Link>
           </div>
           <div className="hdata bg-white shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-md ml-5 mt-10 mr-5 h-40 pl-4">
-            <Link to="/user-home">
+            <Link to="/food">
               <h1 className="font-bold pt-2 mt-2 text-2xl text-gray-600">Cuisine</h1>
               <p className="font-semibold mt-2">Get additional information on the dishes and cusines of particular states  ..</p>
               <button className="bg-sea-green-500 text-white p-2 font-semibold rounded-lg shadow-lg mt-6  mb-0">
