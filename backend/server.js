@@ -15,11 +15,12 @@ io.on("connection", (socket) => {
   });
 
   socket.on("chat message", async (msg) => {
-    const { sender, message, community } = msg;
+    const { sender, senderName, message, community } = msg;
     const newMessage = await new Chat({ ...msg });
     await newMessage.save();
     const newMsg = {
       sender,
+      senderName,
       message,
     }
     io.emit("chat message", newMsg);

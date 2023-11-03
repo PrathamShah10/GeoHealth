@@ -23,6 +23,7 @@ interface ILocation {
 }
 interface IMessage {
     sender: string;
+    senderName: string;
     message: string;
 }
 export type { IUser, IUserState, ISignInDetails, IDiseaseDetails, ILocation, IMessage };

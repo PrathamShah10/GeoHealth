@@ -24,6 +24,7 @@ type UserToken {
 }
 type chats {
     sender: String
+    senderName: String
     message: String
 }
 input signInput {
@@ -47,6 +48,7 @@ input diseaseInput {
 }
 input chatInput {
     sender: String
+    senderName: String
     message: String
     community: String
 }
