@@ -2,10 +2,14 @@ import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 const User = mongoose.model("User");
+const Chat = mongoose.model("Chat");
 export const resolvers = {
   Query: {
     getUsers: async () => {
       return await User.find({});
+    },
+    getCommunityChats: async (_, { community }) => {
+      return await Chat.find({ community });
     },
   },
   Mutation: {
@@ -44,16 +48,23 @@ export const resolvers = {
       await user.save();
       return user;
     },
-    updateUserProfile: async (_, {userDetails}) => {
-      const user = await User.findOne({_id: userDetails._id});
-      if(userDetails.name) {
-        user.name = userDetails.name
+    updateUserProfile: async (_, { userDetails }) => {
+      const user = await User.findOne({ _id: userDetails._id });
+      if (userDetails.name) {
+        user.name = userDetails.name;
       }
-      if(userDetails.email) {
-        user.email = userDetails.email
+      if (userDetails.email) {
+        user.email = userDetails.email;
       }
       await user.save();
       return user;
+    },
+    addChats: async (_, {chatDetails}) => {
+      const newChats = await new Chat({
+        ...chatDetails
+      });
+      await newChats.save();
+      return "successful"
     }
   },
 };
