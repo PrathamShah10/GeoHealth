@@ -13,7 +13,7 @@ const CommunityChat: React.FC = () => {
   const [newMessage, setNewMessage] = useState<string>("");
   const socket = useMemo(() => io("localhost:8000"), []);
 
-  console.log("co", nearestState);
+  // console.log("co", nearestState);
   useEffect(() => {
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(
@@ -49,6 +49,7 @@ const CommunityChat: React.FC = () => {
 
   const handleMessage = useCallback(
     (newMsg: IMessage) => {
+      console.log('newmsg', newMsg)
       setMessages([...messages, newMsg]);
     },
     [messages]
@@ -63,6 +64,7 @@ const CommunityChat: React.FC = () => {
   const sendMessage = () => {
     socket.emit("chat message", {
       sender: user?._id,
+      senderName: user?.name,
       message: newMessage,
       community: nearestState,
     });
@@ -70,27 +72,47 @@ const CommunityChat: React.FC = () => {
   };
 
   return (
-    <div>
-      <div>
-        <label>Message: </label>
-        <input
-          type="text"
-          value={newMessage}
-          onChange={(e) => setNewMessage(e.target.value)}
-        />
-        <button onClick={sendMessage}>Send</button>
-      </div>
-      <div>
-        <h2>Chat Room</h2>
-        <ul>
-          {messages?.map((message, i) => (
-            <li key={i}>
-              <strong>{message.sender}:</strong> {message.message}
-            </li>
-          ))}
-        </ul>
-      </div>
+    <div className="rounded-md overflow-hidden shadow-md">
+  <div className="p-4">
+    <h2 className="text-lg font-semibold mb-2">Chat Room</h2>
+    <ul className="space-y-2">
+      {messages?.map((message, i) => (
+        <li key={i} className="flex items-start">
+          <div className="flex-shrink-0">
+            <img
+              // src={message.senderAvatar}
+              alt={`${message.senderName}'s Avatar`}
+              className="h-6 w-6 rounded-full"
+            />
+          </div>
+          <div className="ml-3">
+            <p className="text-gray-600">
+              <strong>{message.senderName}:</strong> {message.message}
+            </p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+  <div className="border-t border-gray-200 p-4">
+    <label className="block text-sm font-medium text-gray-600">Message:</label>
+    <div className="mt-1 flex rounded-md shadow-sm">
+      <input
+        type="text"
+        className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-md sm:text-sm border-gray-300"
+        value={newMessage}
+        onChange={(e) => setNewMessage(e.target.value)}
+      />
+      <button
+        onClick={sendMessage}
+        className="ml-3 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+      >
+        Send
+      </button>
     </div>
+  </div>
+</div>
+
   );
 };
 
