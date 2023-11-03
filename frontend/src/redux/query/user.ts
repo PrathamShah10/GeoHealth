@@ -43,3 +43,12 @@ export const UPDATE_USER_PROFILE = gql`
     }
   }
 `;
+
+export const GET_USER_CHATS = gql`
+query getChats($community: String!) {
+  getCommunityChats(community: $community) {
+    sender
+    message
+  }
+}
+`;
