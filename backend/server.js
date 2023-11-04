@@ -4,6 +4,8 @@ import { Server } from "socket.io";
 import jwt from "jsonwebtoken";
 import mongoose from "mongoose";
 const Chat = mongoose.model("Chat");
+// const { MOGO_PASS } = require("./keys.js");
+import {MONGO_PASS} from './keys.js';
 const io = new Server(8000, {
   cors: true,
 });
@@ -22,15 +24,18 @@ io.on("connection", (socket) => {
       sender,
       senderName,
       message,
-    }
+    };
     io.emit("chat message", newMsg);
   });
 });
 
-mongoose.connect("mongodb://0.0.0.0:27017/geoHealthDB", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(
+  `mongodb+srv://prathamgaming2001:${MONGO_PASS}@cluster0.9amufvz.mongodb.net/?retryWrites=true&w=majority`,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 mongoose.connection.on("connected", () => {
   console.log("connected to mongoDB");
 });
