@@ -4,32 +4,32 @@ import { Link } from "react-router-dom";
 const Landing = () => {
   return (
     <div className="landpage w-screen h-screen font-custom text-xl font-semibold  ">
-      <div className="navb bg-white p-6 w-screen h-28 shadow-md flex justify-between">
-        <img className="logo h-14 ml-4" src="./logos.png" alt="" />
+      <div className="navb bg-white p-6 w-screen h-20 shadow-sm flex justify-between">
+        <img className="logo h-10 ml-4" src="./logos.png" alt="" />
         <div className="links flex w-1/2 justify-evenly text-sea-green-600" >
-          <button className="Home px-10 shadow-md py-0 rounded-full text-white bg-gradient-to-r from-sea-green-600 to-olive-700 ..." >
+          <button className="Home px-10 hover:shadow-md py-0 rounded-full text-sea-green-600 hover:text-white hover:bg-gradient-to-r from-sea-green-600 to-olive-700 ..." >
             <Link to="/">
               Home
             </Link>
           </button>
-          <button className="SignIn">
+          <button className="SignIn px-10 hover:shadow-md py-0 rounded-full    hover:text-white hover:bg-gradient-to-r from-sea-green-600 to-olive-700 ... ">
             <Link to="/signin">
               SignIn
             </Link></button>
-          <button className="About">About</button>
+          <button className="About px-10 hover:shadow-md py-0 rounded-full text-sea-green-600 hover:text-white hover:bg-gradient-to-r from-sea-green-600 to-olive-700 ...">About</button>
         </div>
       </div>
       <div className="landpagecont flex">
         <div className="cont-left w-1/2">
-          <div className="motive">
+          <div className="group">
             <img className="logo3 h-40 mt-24 ml-24" src="./logo3.png" alt="" />
-            <div className="extrainfo ml-32 text-5xl text-gray-600">
+            <div className="extrainfo ml-32 text-4xl text-gray-600">
               <p >Personalized</p>
               <p >location based </p>
               <p >Insights</p>
             </div>
-            <img className="line h-7 ml-32 mt-10" src="./line.png" alt="" />
-            <button className="joins text-2xl mt-10 ml-32 w-48 shadow-lg text-white p-4 rounded-full bg-gradient-to-r from-sea-green-600 to-olive-700 ...">
+            <img className="transition-colors duration-300 ease-in-out group-hover:width-full h-7 ml-32 mt-10" src="./line.png" alt="" />
+            <button className="group-hover:text-2xl text-xl mt-10 ml-32 w-48  shadow-lg text-white p-4 rounded-full bg-gradient-to-r from-sea-green-600 to-olive-700 ...">
             <Link to="/signin">
               Join Now
             </Link>

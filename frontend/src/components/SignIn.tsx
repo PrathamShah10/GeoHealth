@@ -16,7 +16,7 @@ const SignIn = () => {
     if (signData?.username && signData.password) {
       dispatch(getSignedUserDetailsAction(signData));
       setTimeout(() => {
-        navigate("/user-home");
+        navigate("/newspage");
       }, 1000);
     }
   };

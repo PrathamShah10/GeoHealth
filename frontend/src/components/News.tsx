@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { API_KEY } from '../variables'
 import axios from "axios";
 import { useParams } from "react-router";
-
+import VNavbar from "./VNavbar";
 // import { indianStates } from "../common/constants";
 // import { Link } from "react-router-dom";
 // import Select from "react-select";
@@ -33,7 +33,9 @@ const News = () => {
     getNews();
   }, [state]);
 
-  return (
+  return (<>
+  <div className="flex" >
+    <VNavbar/>
     <div className="w-screen justify-center">
       {/* <div className="w-3/4 mt-20 p-10 ml-auto mr-auto rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
         <div className="">
@@ -57,12 +59,12 @@ const News = () => {
         </Link>
 
       </div> */}
-      <div className="max-w-2xl ml-[50px] px-4 py-8">
-        <h1 className="text-blue-600 text-2xl font-bold mb-4">
-          Business News Headlines
+      <div className=" ml-[50px] px-4 h-screen py-8 overflow-scroll overflow-x-hidden">
+        <h1 className="text-green-600 text-2xl font-bold mb-4">
+          Medical News headlines
         </h1>
         {newsArticles?.map((ele: any, i: number) => (
-          <div key={i} className="border-b py-4">
+          <div key={i} className="border-b py-4 ">
             <p className="text-gray-500 mb-1">{ele.author}</p>
             <h2 className="text-xl font-semibold mb-2">{ele.title}</h2>
             <p className="text-gray-800">{ele.description}</p>
@@ -78,7 +80,7 @@ const News = () => {
         ))}
         {!newsArticles && <p className="text-center">Loading...</p>}
       </div>
-    </div>
-  );
+      </div> </div>
+    </> );
 };
 export default News;
