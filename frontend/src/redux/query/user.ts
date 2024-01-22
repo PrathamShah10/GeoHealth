@@ -53,3 +53,22 @@ query getChats($community: String!) {
   }
 }
 `;
+
+export const ADD_VOLUNTEER = gql`
+  mutation volunteer($volunteerDetails: volunteerInput!) {
+    addVolunteer(volunteerDetails: $volunteerDetails) {
+      languages
+      community
+    }
+  }
+`;
+
+export const GET_ALL_VOLUNTEERS = gql`
+query getVolunteers($community: String!) {
+  getAllVolunteers(community: $community) {
+    name
+    languages
+    contact
+  }
+}
+`;

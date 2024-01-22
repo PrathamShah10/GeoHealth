@@ -11,6 +11,9 @@ export const resolvers = {
     getCommunityChats: async (_, { community }) => {
       return await Chat.find({ community });
     },
+    getAllVolunteers: async (_, { community }) => {
+      return await User.find({ community }) .select('name languages contact');
+    },
   },
   Mutation: {
     addUser: async (_, { newUserDetails }) => {
@@ -26,6 +29,13 @@ export const resolvers = {
         password: hashedPassword,
       });
       await newUser.save();
+    },
+    addVolunteer: async (_, { volunteerDetails }) => {
+      const user = await User.findById(volunteerDetails._id);
+      user.languages = volunteerDetails.languages;
+      user.community = volunteerDetails.community;
+      user.contact = volunteerDetails.contact;
+      await user.save();
     },
     signInUser: async (_, { signDetails }) => {
       const user = await User.findOne({ username: signDetails.username });
@@ -59,12 +69,12 @@ export const resolvers = {
       await user.save();
       return user;
     },
-    addChats: async (_, {chatDetails}) => {
+    addChats: async (_, { chatDetails }) => {
       const newChats = await new Chat({
-        ...chatDetails
+        ...chatDetails,
       });
       await newChats.save();
-      return "successful"
-    }
+      return "successful";
+    },
   },
 };
