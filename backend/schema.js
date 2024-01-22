@@ -2,9 +2,11 @@ export const typeDefs = `#graphql
 type Query {
     getUsers: User
     getCommunityChats(community: String!): [chats]
+    getAllVolunteers(community: String!): [Volunteer]
 }
 type Mutation {
     addUser(newUserDetails: UserInput!) : User
+    addVolunteer(volunteerDetails: volunteerInput!): Volunteer
     signInUser(signDetails: signInput!): UserToken
     updateDiseasesInfo(diseaseDetails: diseaseInput!): User
     updateUserProfile(userDetails: updatedUserInput): User
@@ -18,6 +20,12 @@ type User {
     password: String
     diseases: [String]
 }
+type Volunteer {
+    name: String
+    languages: [String]
+    community: String
+    contact: String
+}
 type UserToken {
     token: String
     userDetails: User
@@ -30,6 +38,12 @@ type chats {
 input signInput {
     username: String!
     password: String!
+}
+input volunteerInput {
+    _id: ID!
+    languages: [String]!
+    community: String!
+    contact: String!
 }
 input UserInput {
     name: String!

@@ -161,3 +161,26 @@ interface StateCoordinate {
   latitude: number;
   longitude: number;
 }
+
+
+export const Languages = [
+  'English',
+  'Spanish',
+  'French',
+  'German',
+  'Chinese',
+  'Japanese',
+  'Italian',
+  'Portuguese',
+  'Russian',
+  'Arabic',
+  'Dutch',
+  'Swedish',
+  'Korean',
+  'Turkish',
+  'Hindi',
+  'Bengali',
+  'Urdu',
+  'Indonesian',
+  'Thai',
+];

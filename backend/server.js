@@ -28,9 +28,9 @@ io.on("connection", (socket) => {
     io.emit("chat message", newMsg);
   });
 });
-
+// mongodb+srv://prathamgaming2001:${MONGO_PASS}@cluster0.9amufvz.mongodb.net/?retryWrites=true&w=majority
 mongoose.connect(
-  `mongodb+srv://prathamgaming2001:${MONGO_PASS}@cluster0.9amufvz.mongodb.net/?retryWrites=true&w=majority`,
+  `mongodb://0.0.0.0/geoHealthDB`,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,

@@ -10,6 +10,8 @@ import News from "./components/News";
 import Newspage from "./components/Newspage";
 import StateSearch from "./components/StateSearch";
 import CommunityChat from "./components/CommunityChat";
+import VolunteerRegister from "./components/VolunteerRegister";
+import SearchVolunteers from "./components/SearchVolunteers";
 
 export const routes: RouteObject[] = [
   {
@@ -51,5 +53,13 @@ export const routes: RouteObject[] = [
   {
     path: "/community-chat",
     element: <PrivateRoute element={CommunityChat} />,
+  },
+  {
+    path: "/register-volunteer",
+    element: <PrivateRoute element={VolunteerRegister} />,
+  },
+  {
+    path: "/search-volunteer",
+    element: <PrivateRoute element={SearchVolunteers} />,
   },
 ];
