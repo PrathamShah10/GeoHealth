@@ -13,6 +13,8 @@ import CommunityChat from "./components/CommunityChat";
 import VolunteerRegister from "./components/VolunteerRegister";
 import SearchVolunteers from "./components/SearchVolunteers";
 import FileUpload from "./components/FileUpload";
+import HospitalFinder from "./components/HospitalFinder";
+import Maps from "./components/Maps";
 
 export const routes: RouteObject[] = [
   {
@@ -66,5 +68,9 @@ export const routes: RouteObject[] = [
   {
     path: "/upload-file",
     element: <PrivateRoute element={FileUpload} />,
-  }
+  },
+  {
+    path: "/hospital",
+    element: <PrivateRoute element={HospitalFinder} />,
+  },
 ];
