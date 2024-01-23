@@ -47,18 +47,10 @@ const PersonalHealth: React.FC = () => {
 
   return (
     <>
-      <div className="flex  bg-keppel-400">
-        <VNavbar />
-        <div className="w-5/6 px-4 h-20 mx-auto mt-5 ">
-          <div className="bg-white flex justify-between mx-auto h-40 rounded shadow-md ">
-            <div>
-              <h1 className="font-semibold p-4 text-2xl">Personal Health Records</h1>
-
-              <p className="font-normal pl-4 text-xl">Enter and update your health records to help us provide latest information on diseases.</p>
-
-            </div>
-            <img className="p-4 pr-10" src="./body-scan.png" alt="" />
-          </div>
+      <div className="flex ">
+        
+        <div className="w-5/6 px-4 h-20 mx-auto mt-40 ">
+          
           <div className="w-1/2 h-[30rem] mx-auto mt-8 p-4 bg-gray-100 rounded shadow">
             <h2 className="text-xl font-semibold mb-4">List of diseases</h2>
             <div className="mb-4">

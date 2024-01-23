@@ -5,7 +5,7 @@ import { REACT_APP_GOOGLE_MAPS_KEY } from '../common/keys'
 
 const Maps = ({ selectedLocation, zoomlevel }) => {
   const [zooms, setzooms] = useState(4);
-  const [mapContainerHeight, setMapContainerHeight] = useState(32);
+  const [mapContainerHeight, setMapContainerHeight] = useState(38);
   
 
 

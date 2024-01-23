@@ -102,7 +102,7 @@ const Newspage = () => {
           <div className="w-5/6 ml-auto relative min-h-screen h-auto p-1">
             <div>
               <div
-                className={`mapss p-3 mt-28 absolute ml-auto mr-auto rounded-md bg-white transition-all duration-5000 ${isMapBig ? ' h-[35rem] w-5/6 right-36 left-auto ' : 'h-[24rem] w-96 right-36'}`}
+                className={`mapss p-3 mt-28 absolute ml-auto mr-auto rounded-md bg-white transition-all duration-5000 ${isMapBig ? ' h-[40rem] w-5/6 right-36 left-auto ' : 'h-[24rem] w-96 right-36'}`}
               >
 
                 {/* <Maps selectedLocation={selectedLocation} zoomlevel={zoomlevel}  /> */}

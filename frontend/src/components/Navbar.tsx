@@ -15,9 +15,10 @@ function Navbar() {
 
             <img className="logo mt-2 h-12 ml-5" src="./logos.png" alt="" />
             <div className="mini flex">
-              <Link to="/newspage">
-                <h1 className="mt-4 mr-5 font-semibold text-xl">Home</h1>
+              <Link to="/register-volunteer">
+                <h1 className="bv mt-3 rounded-lg mr-5 font-semibold shadow-md text-md">Become Volunteer</h1>
               </Link>
+             
               <div><Link to="/profile">
                 <img className="img h-10 m-3" src="./profile.png" alt="" />
               </Link>

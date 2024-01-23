@@ -165,22 +165,12 @@ interface StateCoordinate {
 
 export const Languages = [
   'English',
-  'Spanish',
-  'French',
-  'German',
   'Chinese',
   'Japanese',
-  'Italian',
-  'Portuguese',
-  'Russian',
-  'Arabic',
-  'Dutch',
-  'Swedish',
   'Korean',
-  'Turkish',
+  'Marathi',
   'Hindi',
   'Bengali',
-  'Urdu',
-  'Indonesian',
-  'Thai',
+  
+
 ];

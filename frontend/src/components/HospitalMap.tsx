@@ -6,7 +6,7 @@ import { GoogleMap, useJsApiLoader, MarkerF, InfoWindowF } from '@react-google-m
 const HospitalMap = ({userloc , convertedArray}) => {
 
   const [activeMarker, setActiveMarker] = useState(null);
-  console.log(convertedArray)
+  // console.log(convertedArray)
   const handleActiveMarker = (marker) => {
     if (marker === activeMarker) {
       return;
@@ -30,30 +30,16 @@ const HospitalMap = ({userloc , convertedArray}) => {
   
 
   return (<>
-    <div className="mmpage">
-      <div className='mainpage w-screen font-Rubik backdrop-blur-sm'>
-        <div>
+    
+        <div className=' w-11/12 ml-auto overflow-hidden'>
           <GoogleMap
-            mapContainerStyle={{ height: "800px" }}
-            center={userloc}
+            mapContainerStyle={{ height: "900px" }}
+            center={userloc} 
             zoom={16}
             onLoad={onMapLoad}
             onClick={() => setActiveMarker(null)}
           >
-            {/* {hospital.map(({index , hospitals}) => (
-              <MarkerF
-                key={index}
-                position={hospitals.location}
-                onClick={()=> handleActiveMarker(index)}
-              > 
-                <div>{hospitals.displayName.text}</div>
-              </MarkerF>
-              // <div key={index}>
-              //   <h3>{hospitals.displayName.text}</h3>
-              //   <p>Latitude: {hospitals.location.latitude}</p>
-              //   <p>Longitude: {hospitals.location.longitude}</p>
-              // </div>
-            ))} */}
+          
            {
 
               convertedArray.map(({ id, name, position }) => (
@@ -75,12 +61,8 @@ const HospitalMap = ({userloc , convertedArray}) => {
       
           </GoogleMap>
 
-          <h1 className='pt-40 ml-40 h-screen'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptatibus pariatur sapiente autem asperiores odio odit quos quis ab vel, nisi iste itaque optio commodi exercitationem magnam esse eveniet mollitia!</h1>
-          <button className='ml-96 bg-white h-10 w-10 mt-10' ></button>
         </div>
-      </div>
-
-    </div>
+     
   </>)
 };
 

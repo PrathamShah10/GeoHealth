@@ -48,45 +48,50 @@ const SearchVolunteers = () => {
     }
   };
   return (
-    <div className="p-4rounded shadow-md">
-      <div className="text-2xl font-bold mb-4">Volunteers List</div>
-      <select onChange={handleFilter}>
-        <option value="All" key={100}>
-          All
-        </option>
-        {Languages.map((l: string, i: number) => {
-          return (
-            <option value={l} key={i}>
-              {l}
+    <div className="mmpage">
+      <div className="mainpage w-screen font-Rubik min-h-screen backdrop-blur-md p-1">
+        <div className="w-9/12 bg-white ml-auto mr-10 relative rounded-md min-h-[30rem] shadow-md mt-28 h-auto p-5">
+          <h1 className="text-3xl font-extrabold text-gray-600">Volunteers</h1>
+          <p className="p-2">Filter <select className=" border-2 rounded-md " onChange={handleFilter}>
+            <option value="All" key={100}>
+              All
             </option>
-          );
-        })}
-      </select>
-      <div>
-        {filteredVolunteers?.map((v: any, i: any) => {
-          return (
-            <div
-              key={i}
-              className="mb-4 p-4 bg-green-200 mx-10 rounded-lg shadow-md"
-            >
-              <div className="text-xl font-semibold mb-2">{v.name}</div>
-              <div className="text-gray-600 mb-2">Contact via: {v.contact}</div>
-              <div className="flex">
-                <div className="text-gray-600 mr-2">Languages:</div>
-                <div className="flex flex-wrap">
-                  {v?.languages.map((l: string, i: number) => (
-                    <div
-                      key={i}
-                      className="bg-red-300 text-gray-700 rounded px-2 py-1 m-1"
-                    >
-                      {l}
+            {Languages.map((l: string, i: number) => {
+              return (
+                <option value={l} key={i}>
+                  {l}
+                </option>
+              );
+            })}
+          </select></p>
+          
+          <div>
+            {filteredVolunteers?.map((v: any, i: any) => {
+              return (
+                <div
+                  key={i}
+                  className="mb-4 mt-4 p-4 bg-gray-100 mx-10 rounded-lg shadow-md"
+                >
+                  <div className="text-xl font-semibold mb-2">Name - {v.name}</div>
+                  <div className="text-gray-600 mb-2">Contact : {v.contact}</div>
+                  <div className="flex">
+                    <div className="text-gray-600 mr-2 mt-1">Languages:</div>
+                    <div className="flex flex-wrap">
+                      {v?.languages.map((l: string, i: number) => (
+                        <div
+                          key={i}
+                          className="bg-teal-300 text-white rounded  p-1 ml-2"
+                        >
+                          {l}
+                        </div>
+                      ))}
                     </div>
-                  ))}
+                  </div>
                 </div>
-              </div>
-            </div>
-          );
-        })}
+              );
+            })}
+          </div>
+        </div>
       </div>
     </div>
   );

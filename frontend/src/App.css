@@ -1,4 +1,5 @@
 
+
 /* Landingpage */
 
 .active{
@@ -148,4 +149,10 @@
     cursor: pointer;
     width: 101%;
     
+  }
+
+  .bv{
+    background-color: #2CCFBF;
+    color: white;
+    padding: 0.5rem;
   }

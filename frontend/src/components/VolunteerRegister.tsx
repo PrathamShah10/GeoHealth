@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {useNavigate} from 'react-router-dom'
 import { useMutation } from "@apollo/client";
 import { ADD_VOLUNTEER } from "../redux/query/user";
 import { Languages, stateCoordinates } from "../common/constants";
@@ -11,7 +12,7 @@ function VolunteerRegister() {
   const [selectedLanguages, setSelectedLanguages] = useState<Array<string>>([]);
   const [selectedCommunity, setSelectedCommunity] = useState<string>("");
   const [contact, setContact] = useState<string>('');
-
+const navigate = useNavigate();
   const handleLanguageChange = (language: string) => {
     if (selectedLanguages.includes(language)) {
       setSelectedLanguages(
@@ -34,11 +35,12 @@ function VolunteerRegister() {
         },
       },
     });
+    navigate('/newspage');
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-200">
-      <div className="max-w-md w-full p-6 bg-white rounded-lg shadow-lg">
+    <div className="mainsigninpage min-h-screen flex items-center justify-center">
+      <div className="signinform max-w-md w-full p-6 bg-white rounded-lg shadow-lg">
         <h2 className="text-2xl text-center font-semibold mb-6">
           Volunteer Registration
         </h2>
@@ -92,7 +94,9 @@ function VolunteerRegister() {
               placeholder="Enter your email"
             />
           </div>
-          <button
+          <button 
+          
+            
             type="submit"
             className="w-full bg-sea-green-600 text-white py-2 px-4 rounded-md hover:bg-olive-700 focus:outline-none focus:bg-"
           >

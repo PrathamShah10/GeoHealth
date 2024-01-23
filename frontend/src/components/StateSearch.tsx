@@ -48,18 +48,10 @@ function StateSearch() {
 
     return (
         <>
-            <div className="flex bg-keppel-400  ">
-                <VNavbar />
-                <div className="w-5/6 ml-4 mr-0 mx-auto mt-4">
-                    <div className="bg-white flex justify-between mx-auto h-40 rounded shadow-md ">
-                        <div>
-                            <h1 className="font-semibold p-4 text-2xl">Cusines</h1>
-
-                            <p className="font-normal pl-4 text-xl">Find information on wide variety of dishes from different states of india.</p>
-
-                        </div>
-                        <img className="p-4 pr-10" src="./food.png" alt="" />
-                    </div>
+            <div className="flex  ">
+               
+                <div className="w-5/6 mr-0 mx-auto mt-40 ml-40">
+                   
 
                     <div className='w-2/3 pb-10 ml-auto mr-auto mt-10 p-1  rounded-lg bg-white shadow-lg pl-10'>
                         <h1 className='font-bold text-2xl p-1 text-sea-green-600 mt-6'>Search for Recipes by State</h1>

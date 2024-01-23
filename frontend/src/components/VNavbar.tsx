@@ -43,6 +43,10 @@ const VNavbar = () => {
                     <img className="h-6 m-3" src="./hospital.png" alt="" />
                     <h1 className="pl-1 pt-3 pb-3 font-medium text-base tracking-tight">Nearby Hospital</h1>
                 </NavLink>
+                <NavLink to="/search-volunteer"  className="w-11/12 ml-3 flex rounded hover:bg-gray-100  mt-1.5 ">
+                    <img className="h-6 m-3" src="./volunteer.png" alt="" />
+                    <h1 className="pl-1 pt-3 pb-3 font-medium text-base tracking-tight">Nearby Volunteer</h1>
+                </NavLink>
                 <div 
                 className="cursor-pointer w-11/12 ml-3 flex rounded hover:bg-gray-100 bottom-3 absolute "
                 onClick={() => {
