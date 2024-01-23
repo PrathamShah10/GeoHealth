@@ -17,4 +17,17 @@ interface IDiseaseDetails {
   _id: string;
   diseases: Array<string>;
 }
-export type { IUser, IUserState, ISignInDetails, IDiseaseDetails };
+interface ILocation {
+  latitude: number;
+  longitude: number;
+}
+interface IMessage {
+    sender: string;
+    senderName: string;
+    message: string;
+}
+interface IDropdown {
+  label: string;
+  value: string;
+}
+export type { IUser, IUserState, ISignInDetails, IDiseaseDetails, ILocation, IMessage, IDropdown };

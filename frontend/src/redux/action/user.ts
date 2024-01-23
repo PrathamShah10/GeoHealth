@@ -55,7 +55,6 @@ export const setUserDiseasesAction = (diseaseDetails: IDiseaseDetails) => {
       })
       .then((response) => {
         const res = response.data.updateDiseasesInfo;
-        console.log('dissssss', res.diseases)
         dispatch(setUserDiseases(res.diseases));
       })
       .catch((err) => {

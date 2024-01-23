@@ -9,11 +9,14 @@ import Landing from "./components/Landing";
 import News from "./components/News";
 import Newspage from "./components/Newspage";
 import StateSearch from "./components/StateSearch";
+import CommunityChat from "./components/CommunityChat";
+import VolunteerRegister from "./components/VolunteerRegister";
+import SearchVolunteers from "./components/SearchVolunteers";
 
 export const routes: RouteObject[] = [
   {
     path: "/",
-    element: <Landing/>,
+    element: <Landing />,
   },
   {
     path: "/signin",
@@ -46,5 +49,17 @@ export const routes: RouteObject[] = [
   {
     path: "/news/:state",
     element: <PrivateRoute element={News} />,
+  },
+  {
+    path: "/community-chat",
+    element: <PrivateRoute element={CommunityChat} />,
+  },
+  {
+    path: "/register-volunteer",
+    element: <PrivateRoute element={VolunteerRegister} />,
+  },
+  {
+    path: "/search-volunteer",
+    element: <PrivateRoute element={SearchVolunteers} />,
   },
 ];

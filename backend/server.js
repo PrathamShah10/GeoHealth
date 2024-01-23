@@ -3,16 +3,46 @@ import { startStandaloneServer } from "@apollo/server/standalone";
 import { Server } from "socket.io";
 import jwt from "jsonwebtoken";
 import mongoose from "mongoose";
-
-mongoose.connect("mongodb://0.0.0.0:27017/geoHealthDB", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+const Chat = mongoose.model("Chat");
+// const { MOGO_PASS } = require("./keys.js");
+import {MONGO_PASS} from './keys.js';
+const io = new Server(8000, {
+  cors: true,
 });
+io.on("connection", (socket) => {
+  console.log("A user connected");
+
+  socket.on("disconnect", () => {
+    console.log("User disconnected");
+  });
+
+  socket.on("chat message", async (msg) => {
+    const { sender, senderName, message, community } = msg;
+    const newMessage = await new Chat({ ...msg });
+    await newMessage.save();
+    const newMsg = {
+      sender,
+      senderName,
+      message,
+    };
+    io.emit("chat message", newMsg);
+  });
+});
+// mongodb+srv://prathamgaming2001:${MONGO_PASS}@cluster0.9amufvz.mongodb.net/?retryWrites=true&w=majority
+mongoose.connect(
+  `mongodb://0.0.0.0/geoHealthDB`,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 mongoose.connection.on("connected", () => {
   console.log("connected to mongoDB");
 });
 
 import "./modal/User.js";
+import "./modal/Chat.js";
+
 import { typeDefs } from "./schema.js";
 import { resolvers } from "./resolvers.js";
 

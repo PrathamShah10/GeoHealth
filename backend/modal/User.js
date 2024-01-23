@@ -20,5 +20,14 @@ const userSchema = new mongoose.Schema({
   diseases: {
     type: [String],
   },
+  languages: {
+    type: [String],
+  },
+  community: {
+    type: String,
+  },
+  contact: {
+    type: String,
+  }
 });
 mongoose.model("User", userSchema);
