@@ -1,2 +1,4 @@
 /node_modules
 /src/variables.ts
+/src/common/keys.js
+

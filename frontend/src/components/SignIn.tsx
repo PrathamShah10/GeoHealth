@@ -33,8 +33,8 @@ const SignIn = () => {
   };
   return (
     
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="w-1/4 p-6 bg-white rounded-lg shadow-lg">
+    <div className="mainsigninpage min-h-screen flex items-center justify-center">
+      <div className="signinform w-1/4 p-6  shadow-md rounded-lg ">
         <h2 className="text-2xl text-center font-semibold mb-6">Login</h2>
         <form onSubmit={(e) => handleSubmit(e)}>
           <div className="mb-4">
@@ -63,7 +63,7 @@ const SignIn = () => {
           </div>
           <button
             type="submit"
-            className="w-full bg-sea-green-600 text-white py-2 px-4 rounded-md hover:bg-olive-700 focus:outline-none focus:bg-"
+            className="buttonsignin w-1/2 text-white py-2 px-4 rounded-md  focus:outline-none"
           >
             {!isPending ? "SignIn" : <ClipSpinner isLoading={isPending} />}
           </button>

@@ -11,6 +11,7 @@ import Newspage from "./components/Newspage";
 import StateSearch from "./components/StateSearch";
 import CommunityChat from "./components/CommunityChat";
 import HospitalFinder from "./components/HospitalFinder";
+import Maps from "./components/Maps";
 
 export const routes: RouteObject[] = [
   {
@@ -56,5 +57,5 @@ export const routes: RouteObject[] = [
   {
     path: "/hospital",
     element: <PrivateRoute element={HospitalFinder} />,
-  }
+  },
 ];

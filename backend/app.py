@@ -1,39 +1,65 @@
-
-from pymongo import MongoClient
-client = MongoClient("mongodb://0.0.0.0:27017/geoHealthDB")
-from pygooglenews import GoogleNews
+# Import necessary libraries
 from flask import Flask, request, jsonify
-from flask_cors import CORS
+from flask_cors import CORS  # Import CORS
+import requests
+from openai import OpenAI
+from dotenv import load_dotenv
+import os
+
+# Load environment variables
+load_dotenv()
+
+# Initialize Flask app
 app = Flask(__name__)
-CORS(app) 
-@app.route('/api/send-receive-data', methods=['POST'])
-def send_receive_data():
-    if request.method == 'POST':
-        data = request.json  # Access the data sent from the frontend
+CORS(app)
+# OpenAI credentials
+API_KEY = os.getenv("API_KEY")
+SE_ID = os.getenv("SE_ID")
 
-        # Process the data here
-        received_data = data['data']
-        # Do something with received_data
-        print(received_data)
-        # Send a response back to the frontend
-        response_data = {'message': 'Data received and processed'}
-        return jsonify(response_data)
+# Define endpoint to receive city from frontend
+@app.route('/get_diseases', methods=['POST'])
+def get_diseases():
+    # Get city from the frontend
+    city = request.json.get('city')
     
-    gn = GoogleNews()
+    # Construct search query
+    search_query = f'current diseases in {city}'
 
-    stories = []
-    s = gn.search( received_data , when = '48h')
-    newsitem = s['entries']
-    for item in newsitem:
-        story = {      
-            'title': item.title,
-            'link': item.link,
-            'summary': item.summary,
-        
-        }
-        stories.append(story) 
-    print(stories)
+    # Google Custom Search API parameters
+    url = 'https://www.googleapis.com/customsearch/v1' 
+    params = {
+        'q': search_query,
+        'key': API_KEY,
+        'cx': SE_ID,
+        'gl': 'Asia',
+        'dateRestrict': '2023-11-01:2024-01-19'
+    }
+    
+    # Make the request to Google Custom Search API
+    response = requests.get(url, params=params)
+    results = response.json().get('items', [])
 
-        
+    # Write results to a file
+    # with open(r"f:\Geo\GeoHealth\backend\diseases.txt", 'w') as file:
+    #     for item in results:
+    #         file.write(item['title'])
+
+    # # Read content from the file
+    # with open(r"f:\Geo\GeoHealth\backend\diseases.txt", 'r') as file:   
+    #     content = file.read()
+    titles = [item['title'] for item in results]
+
+    # Convert titles to a single string
+    content = '\n'.join(titles)
+    
+    # Use OpenAI to process the content
+    client = OpenAI()
+    completion = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=[{"role": "user", "content": f'Extract and list only exact disease names seperated by comma from the following text: {content}'}],
+    )
+    return jsonify({'result': completion.choices[0] .message.content})
+    
+# Run the Flask app
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

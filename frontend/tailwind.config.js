@@ -1,10 +1,30 @@
-/** @type {import('tailwindcss').Config} */
+/** @type {import('tailwindcss').Config}  */
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    fontWeight: {
+      thin: '100',
+      hairline: '100',
+      extralight: '200',
+      light: '300',
+      normal: '400',
+      medium: '500',
+      semibold: '600',
+      bold: '700',
+      extrabold: '800',
+      'extra-bold': '800',
+      black: '900',
+    },
     extend: {
+      dropShadow: {
+        '3xl': '0 35px 35px rgba(0, 0, 0, 0.25)',
+        '4xl': [
+            '0 35px 35px rgba(0, 0, 0, 0.25)',
+            '0 45px 65px rgba(0, 0, 0, 0.15)'
+        ]
+      },
       colors: {
         'sea-green': {
           '50': '#f0f9f5',
@@ -49,9 +69,17 @@ module.exports = {
       },
 
       fontFamily: {
-        custom: ['Nunito', 'sans-serif'],
+        'sans': ['Poppins',' sans-serif'],
+        'Rubik': ['Rubik', 'sans-serif'],
+        'Montserrat' : ['Montserrat' , 'sans-serif'],
+        'Noto Color Emoji':['Noto Color Emoji', 'sans-serif'],
+        'Danc': ['Dancing Script', 'cursive'],
+        'Nan':['Nunito', 'cursive'],
+        'NunitoSans':['Nunito Sans' , 'sans-serif'],
+
       },
+      
     },
-  },
+  }, 
   plugins: [],
 }

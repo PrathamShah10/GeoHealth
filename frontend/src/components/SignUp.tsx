@@ -40,8 +40,8 @@ const SignUp = () => {
     return <h1>Error</h1>;
   }
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-200">
-      <div className="max-w-md w-full p-6 bg-white rounded-lg shadow-lg">
+    <div className="mainsigninpage min-h-screen flex items-center justify-center ">
+      <div className="signinform max-w-md w-full p-6 bg-white rounded-lg shadow-lg">
         <h2 className="text-2xl text-center font-semibold mb-6">Registration</h2>
         <form onSubmit={(e) => handleSubmit(e)}>
           <div className="mb-4">
