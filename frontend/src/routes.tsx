@@ -12,6 +12,7 @@ import StateSearch from "./components/StateSearch";
 import CommunityChat from "./components/CommunityChat";
 import VolunteerRegister from "./components/VolunteerRegister";
 import SearchVolunteers from "./components/SearchVolunteers";
+import FileUpload from "./components/FileUpload";
 
 export const routes: RouteObject[] = [
   {
@@ -62,4 +63,8 @@ export const routes: RouteObject[] = [
     path: "/search-volunteer",
     element: <PrivateRoute element={SearchVolunteers} />,
   },
+  {
+    path: "/upload-file",
+    element: <PrivateRoute element={FileUpload} />,
+  }
 ];

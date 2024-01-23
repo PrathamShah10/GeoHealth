@@ -1,4 +1,7 @@
+// import { GraphQLUpload } from 'graphql-upload';
+import { ApolloServer } from "@apollo/server";
 export const typeDefs = `#graphql
+
 type Query {
     getUsers: User
     getCommunityChats(community: String!): [chats]
@@ -11,7 +14,10 @@ type Mutation {
     updateDiseasesInfo(diseaseDetails: diseaseInput!): User
     updateUserProfile(userDetails: updatedUserInput): User
     addChats(chatDetails: chatInput!): String
+
 }
+
+
 type User {
     _id: ID!
     name: String

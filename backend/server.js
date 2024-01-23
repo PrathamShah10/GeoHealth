@@ -1,6 +1,6 @@
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
-import { Server } from "socket.io";
+import { Server } from "socket.io"; 
 import jwt from "jsonwebtoken";
 import mongoose from "mongoose";
 const Chat = mongoose.model("Chat");
@@ -49,6 +49,7 @@ import { resolvers } from "./resolvers.js";
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  
 });
 const { url } = await startStandaloneServer(server, {
   context: async ({ req }) => {
