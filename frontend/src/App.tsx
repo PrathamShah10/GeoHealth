@@ -6,6 +6,7 @@ import { store, persistor } from "./redux/index";
 import "./App.css";
 import { routes } from "./routes";
 import Navbar from "./components/Navbar";
+import DietRec from "./components/Diet_Rec";
 
 function App() {
   const element = useRoutes(routes);
@@ -14,6 +15,7 @@ function App() {
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <Navbar />
+          <DietRec />
           {element}
         </PersistGate>
       </Provider>
