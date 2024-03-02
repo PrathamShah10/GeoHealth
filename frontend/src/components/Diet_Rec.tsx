@@ -9,7 +9,7 @@ function PostDisease() {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch('http://localhost:8000/prediction', {
+      const response = await fetch('http://localhost:5000/data', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
