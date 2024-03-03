@@ -14,7 +14,12 @@ import VolunteerRegister from "./components/VolunteerRegister";
 import SearchVolunteers from "./components/SearchVolunteers";
 import FileUpload from "./components/FileUpload";
 import HospitalFinder from "./components/HospitalFinder";
-import Maps from "./components/Maps";
+import UserDocumentsInput from "./components/UserDocumentsInput";
+import MLmodel from "./components/MLmodel";
+import StoreFile from "./components/StoreFile";
+import GetFiles from "./components/GetFiles";
+import HospitalRegistration from "./components/HospitalRegister";
+import GetNearbyHospitals from "./components/GetNearbyHospitals";
 
 export const routes: RouteObject[] = [
   {
@@ -73,4 +78,28 @@ export const routes: RouteObject[] = [
     path: "/hospital",
     element: <PrivateRoute element={HospitalFinder} />,
   },
+  {
+    path: "/x",
+    element: <PrivateRoute element={UserDocumentsInput} />,
+  },
+  {
+    path: "/mlmodel",
+    element: <PrivateRoute element={MLmodel} />,
+  },
+  {
+    path: "/add- file",
+    element: <PrivateRoute element={StoreFile} />,
+  },
+  {
+    path: "/get-files",
+    element: <PrivateRoute element={GetFiles} />,
+  },
+  {
+    path: "/hospital-register",
+    element: <HospitalRegistration />,
+  },
+  {
+    path: '/nearby-hospitals',
+    element: <PrivateRoute element={GetNearbyHospitals} />,
+  }
 ];

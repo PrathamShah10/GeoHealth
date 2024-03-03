@@ -5,7 +5,7 @@ import jwt from "jsonwebtoken";
 import mongoose from "mongoose";
 const Chat = mongoose.model("Chat");
 // const { MOGO_PASS } = require("./keys.js");
-import {MONGO_PASS} from './keys.js';
+import {JWT_SECRET, MONGO_PASS} from './keys.js';
 const io = new Server(8000, {
   cors: true,
 });
@@ -42,6 +42,8 @@ mongoose.connection.on("connected", () => {
 
 import "./modal/User.js";
 import "./modal/Chat.js";
+import "./modal/File.js";
+import "./modal/Hospital.js";
 
 import { typeDefs } from "./schema.js";
 import { resolvers } from "./resolvers.js";
@@ -55,7 +57,7 @@ const { url } = await startStandaloneServer(server, {
   context: async ({ req }) => {
     const { authorization } = req.headers;
     if (authorization) {
-      const { userId } = jwt.verify(authorization, "Az!@#$%bd1_@]_b");
+      const { userId } = jwt.verify(authorization, JWT_SECRET);
       return { userId: userId };
     }
   },

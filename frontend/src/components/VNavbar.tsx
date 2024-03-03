@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useAppSelector } from "../hooks/redux";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../hooks/redux";

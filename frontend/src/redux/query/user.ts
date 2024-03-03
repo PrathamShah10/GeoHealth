@@ -45,13 +45,13 @@ export const UPDATE_USER_PROFILE = gql`
 `;
 
 export const GET_USER_CHATS = gql`
-query getChats($community: String!) {
-  getCommunityChats(community: $community) {
-    sender
-    senderName
-    message
+  query getChats($community: String!) {
+    getCommunityChats(community: $community) {
+      sender
+      senderName
+      message
+    }
   }
-}
 `;
 
 export const ADD_VOLUNTEER = gql`
@@ -64,11 +64,42 @@ export const ADD_VOLUNTEER = gql`
 `;
 
 export const GET_ALL_VOLUNTEERS = gql`
-query getVolunteers($community: String!) {
-  getAllVolunteers(community: $community) {
-    name
-    languages
-    contact
+  query getVolunteers($community: String!) {
+    getAllVolunteers(community: $community) {
+      name
+      languages
+      contact
+    }
   }
-}
+`;
+
+export const GET_ALL_USERFILES = gql`
+  query getUserFiles($id: String!) {
+    getUserFiles(id: $id) {
+      fileName
+      fileHash
+    }
+  }
+`;
+export const ADD_FILE = gql`
+  mutation addFile($fileDetails: fileInput!) {
+    addFile(fileDetails: $fileDetails)
+  }
+`;
+
+export const ADD_HOSPITAL = gql`
+  mutation addHospital($hospitalDetails: hospitalInput!) {
+    addHospital(hospitalDetails: $hospitalDetails)
+  }
+`;
+
+export const GET_NEARBY_HOSPTIALS = gql`
+  query getNearbyHospitals($locationDetails: locationInput!) {
+    getNearbyHospitals(locationDetails: $locationDetails) {
+      name
+      speciality
+      latitude
+      longitude
+    }
+  }
 `;

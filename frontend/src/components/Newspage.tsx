@@ -1,22 +1,14 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import Dropdown from "../common/Dropdown";
 import { IDropdown } from "../interface/user";
-import VNavbar from "./VNavbar";
 import { useAppSelector } from "../hooks/redux";
-import Maps from "./Maps";
-import AirQuality from "./AirQuality";
 
 
 
 const Newspage = () => {
  
-
-  const [selectedState, setSelectedState] = useState<IDropdown | null>(null);
   const [status, setStatus] = useState<string>('');
   const [city, setCity] = useState<string>('');
   const [responseArray, setResponseArray] = useState<string[] | null>(null);
-  const { user } = useAppSelector((state) => state.user);
   const [showdata, setShowdata] = useState(false);
   console.log(responseArray)
   const [selectedLocation, setSelectedLocation] = useState({
@@ -24,7 +16,6 @@ const Newspage = () => {
     lng: 77.1734,
   });
   const [isMapBig, setIsMapBig] = useState(true);
-  const zoomlevel = 10.5;
   const findMyCity = async () => {
     const success = (position: GeolocationPosition) => {
       console.log(position);
@@ -104,9 +95,6 @@ const Newspage = () => {
               <div
                 className={`mapss p-3 mt-28 absolute ml-auto mr-auto rounded-md bg-white transition-all duration-5000 ${isMapBig ? ' h-[35rem] w-5/6 right-36 left-auto ' : 'h-[24rem] w-96 right-36'}`}
               >
-
-                {/* <Maps selectedLocation={selectedLocation} zoomlevel={zoomlevel}  /> */}
-
               </div>
             </div>
             <div className="h-auto">
