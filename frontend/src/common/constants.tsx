@@ -184,3 +184,7 @@ export const Languages = [
   'Indonesian',
   'Thai',
 ];
+
+export const modelDiseasesData = [
+  
+];

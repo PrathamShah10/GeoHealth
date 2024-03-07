@@ -5,7 +5,7 @@ import jwt from "jsonwebtoken";
 import mongoose from "mongoose";
 const Chat = mongoose.model("Chat");
 // const { MOGO_PASS } = require("./keys.js");
-import {MONGO_PASS} from './keys.js';
+//import {MONGO_PASS} from './keys.js';
 const io = new Server(8000, {
   cors: true,
 });
