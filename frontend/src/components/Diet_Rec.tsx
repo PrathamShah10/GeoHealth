@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Dropdown from '../common/Dropdown';
+import { IDropdown } from '../interface/user';
 
 function PostDisease() {
   const [Disease, setDisease] = useState('');

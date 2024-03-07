@@ -8,7 +8,7 @@ import warnings
 warnings.filterwarnings('ignore')
 class Recommender:
     
-    def _init_(self,profiles,recent_activity,dataset):
+    def __init__(self,profiles,recent_activity,dataset):
         self.df = dataset
         self.profiles = profiles
         self.recent_activity = recent_activity
@@ -140,7 +140,5 @@ def send_dishes():
         "data" : 
         json_array
     }
-if __name__ == '_main_':
+if __name__ == '__main__':
     app.run(port=5000)
-    print("server started at port 5000")
-
