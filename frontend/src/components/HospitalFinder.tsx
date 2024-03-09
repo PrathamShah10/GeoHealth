@@ -52,6 +52,7 @@ const HospitalFinder = () => {
 
         const data = await response.json();
         setHospital(data.places);
+        console.log(data.places)
         hospital.length && setConvertedArray(
           hospital.map((item, index) => ({
             id: index + 1,

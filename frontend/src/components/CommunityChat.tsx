@@ -105,7 +105,7 @@ const CommunityChat: React.FC = () => {
                 {messages?.map((message, i) => (
                   <li className={`shadow-sm w-min mt-2 text-white rounded-md
                 
-                
+                  
                 ${message.sender === user?._id ? 'bg-sea-green-500 rounded-tl-none ml-auto min-w-[20%]' : 'rounded-tr-none bg-gray-800 min-w-[20%] text-white'}
                  p-4`} key={i}>
                     <p className="font-semibold">Anonymous</p>

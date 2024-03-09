@@ -11,8 +11,6 @@ import axios from 'axios';
 // Store data in localStorage
 localStorage.setItem('myData', JSON.stringify({ key: 'value' }));
 
-
-
 const PersonalHealth: React.FC = () => {
   const [data, setData] = useState({});
   useEffect(() => {

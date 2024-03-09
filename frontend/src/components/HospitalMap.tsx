@@ -31,7 +31,7 @@ const HospitalMap = ({userloc , convertedArray}) => {
 
   return (<>
     
-        <div className=' w-11/12 ml-auto overflow-hidden'>
+        <div className='hmap w-11/12 ml-auto overflow-hidden'>
           <GoogleMap
             mapContainerStyle={{ height: "900px" }}
             center={userloc} 

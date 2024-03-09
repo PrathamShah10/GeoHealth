@@ -59,6 +59,7 @@ export const ADD_VOLUNTEER = gql`
     addVolunteer(volunteerDetails: $volunteerDetails) {
       languages
       community
+      desc
     }
   }
 `;
@@ -69,6 +70,7 @@ query getVolunteers($community: String!) {
     name
     languages
     contact
+    desc
   }
 }
 `;

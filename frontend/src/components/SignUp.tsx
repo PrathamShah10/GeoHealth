@@ -1,19 +1,48 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import { useMutation } from "@apollo/client";
 import { SIGNUP_USER } from "../redux/query/user";
 import ClipSpinner from "../common/ClipSpinner";
+interface RegistrationData {
+  name?: string;
+  email?: string;
+  username?: string;
+  password?: string;
+}
+
 const SignUp = () => {
-  const [registrationData, setRegistrationData] = useState({});
+  const notifyA = (msg) => toast.error(msg);
+  const notifyB = (msg) => toast.success(msg);
+  const [registrationData, setRegistrationData] = useState<RegistrationData>({});
   const [signUpUser, { loading, error }] = useMutation(SIGNUP_USER);
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(registrationData.email)) {
+      notifyA("Invalid email");
+      return;
+    }
+    const passRegex =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
+    // Basic password validation (minimum length of 6 characters)
+    if (!passRegex.test(registrationData.password)) {
+      notifyA(
+        "Password must contain at least 8 characters, including at least 1 number and 1 includes both lower and uppercase letters and special characters for example #,?,!"
+      );
+      return;
+    }
+
+    // If validation passes, proceed with signup
     signUpUser({
       variables: {
         newUserDetails: registrationData,
       },
     });
   };
+
   const handleChange = (
     e?: React.ChangeEvent<HTMLInputElement>,
     name?: string,

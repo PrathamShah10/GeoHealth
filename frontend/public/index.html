@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,6 +17,7 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="./ab.css" href="">
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -27,10 +30,14 @@
     <title>Geo Health</title>
   </head>
   <body>
-    
-    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
- 
-    <script src="https://mediafiles.botpress.cloud/28d237a6-db99-4c7b-89c5-359e406c5ec2/webchat/config.js" defer></script>
+    <div class="abcd">
+      <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    </div>
+
+    <script
+      src="https://mediafiles.botpress.cloud/28d237a6-db99-4c7b-89c5-359e406c5ec2/webchat/config.js"
+      defer
+    ></script>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--

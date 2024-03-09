@@ -31,6 +31,7 @@ type Volunteer {
     languages: [String]
     community: String
     contact: String
+    desc: String
 }
 type UserToken {
     token: String
@@ -50,6 +51,7 @@ input volunteerInput {
     languages: [String]!
     community: String!
     contact: String!
+    desc: String!
 }
 input UserInput {
     name: String!

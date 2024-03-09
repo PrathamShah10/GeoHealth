@@ -35,6 +35,7 @@ export const resolvers = {
       user.languages = volunteerDetails.languages;
       user.community = volunteerDetails.community;
       user.contact = volunteerDetails.contact;
+      user.desc = volunteerDetails.desc;
       await user.save();
     },
     signInUser: async (_, { signDetails }) => {

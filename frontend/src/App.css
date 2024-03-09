@@ -1,158 +1,338 @@
-
-
 /* Landingpage */
-
-.active{
-    background-color: rgb(44, 207, 191);
-    border-radius: 5px;
+.varynice .asdf {
+  background-color: rgb(44, 207, 191);
 }
-.active h1{
-    color: white;
-    font-weight: 500;
+.active {
+  background-color: rgb(44, 207, 191);
+  border-radius: 5px;
 }
-.active img{
-    color: white;
-    filter: invert(100%);
+.active h1 {
+  color: white;
+  font-weight: 500;
 }
-
-.liness{
-    filter: invert(59%) sepia(90%) saturate(349%) hue-rotate(125deg) brightness(98%)
+.active img {
+  color: white;
+  filter: invert(100%);
 }
 
-.uppersvg{
-    background-color: #2CCFBF;
-}
- 
-.lowersvg{
-    background-image: url( '../public/wave3.png' );
-    background-repeat: no-repeat;
-    background-size: contain;
-   
+.liness {
+  filter: invert(59%) sepia(90%) saturate(349%) hue-rotate(125deg)
+    brightness(98%);
 }
 
-.uppersvg a{
-    display: block;
-}
-.flexp{
-    background-color: rgb(44, 207, 191);
-    color: white;
-    padding: 1rem;
-    font-weight: 500;
-    font-family:monospace;
-    border-radius: 0.2rem;
-    
-}
-.imgsc{
-    
-    background-color: white;
+.uppersvg {
+  background-color: #2ccfbf;
 }
 
-.bottom{
-    background-color: rgb(44, 207, 191);
+.lowersvg {
+  background-image: url("../public/wave3.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.uppersvg a {
+  display: block;
+}
+.flexp {
+  background-color: rgb(44, 207, 191);
+  color: white;
+  padding: 1rem;
+  font-weight: 500;
+  font-family: monospace;
+  border-radius: 0.2rem;
+}
+.imgsc {
+  background-color: white;
+}
+
+.bottom {
+  background-color: rgb(44, 207, 191);
 }
 
 /* Sign in page */
 
-.mainsigninpage{
-    background-image: url( '../public/SigninBack.jpg' );
-    background-repeat: no-repeat;
-    
+.mainsigninpage {
+  background-image: url("../public/SigninBack.jpg");
+  background-repeat: no-repeat;
 }
 
 .signinform {
-    background: rgba( 255, 255, 255, 0.3 );
-    backdrop-filter: blur( 7.5px );
-  -webkit-backdrop-filter: blur( 7.5px );
-  
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(7.5px);
+  -webkit-backdrop-filter: blur(7.5px);
 }
 
-.buttonsignin{
-    background-color:#5dbeb6;
-    margin-left: 25%;
+.buttonsignin {
+  background-color: #5dbeb6;
+  margin-left: 25%;
 }
 
-.buttonsignin:hover{
-    background-color:#28a59b;
+.buttonsignin:hover {
+  background-color: #28a59b;
 }
 
 /* vnavbar */
 
-.vnavbarr{
-    position: fixed;
-    z-index: 999;
+.vnavbarr {
+  position: fixed;
+  z-index: 999;
 }
 
 /* navbar */
 
-.sda{
-    position: fixed;
-    z-index: 9999;
+.sda {
+  position: fixed;
+  z-index: 9999;
 }
 
 /* newspage */
 
-.mainpage{
+.mainpage {
   height: auto;
-    
 }
-.mmpage{
-    background-image: url( '../public/SigninBack.jpg' );
-    background-repeat: repeat-y;
-    height: auto;
-    overflow-x: hidden;
-    width:100%;
+.mmpage {
+  background-image: url("../public/SigninBack.jpg");
+  background-repeat: repeat-y;
+  height: auto;
+  overflow-x: hidden;
+  width: 100%;
 }
-.mapss{
-    box-shadow: 0px 1px 7px 0px rgba(15, 87, 79, 0.2);
-    
+.mapss {
+  box-shadow: 0px 1px 7px 0px rgba(15, 87, 79, 0.2);
 }
 
-.AQ{
-    box-shadow: 0px 1px 7px 0px rgba(15, 87, 79, 0.2);
+.AQ {
+  box-shadow: 0px 1px 7px 0px rgba(15, 87, 79, 0.2);
 }
 
 @keyframes fadeIn {
-    from {
-      opacity: 0; /* Start with fully transparent */
-    }
-    to {
-      opacity: 1; /* End with fully opaque */
-    }
+  from {
+    opacity: 0; /* Start with fully transparent */
   }
+  to {
+    opacity: 1; /* End with fully opaque */
+  }
+}
 
-.AQText{
-    animation: fadeIn 3s ease; /* Adjust the duration (3s in this case) for the desired speed */
+.AQText {
+  animation: fadeIn 3s ease; /* Adjust the duration (3s in this case) for the desired speed */
 }
 
 @keyframes shimmer {
-    0% {
-      background-position: 200%;
-    }
-    100% {
-      background-position: -200%;
-    }
+  0% {
+    background-position: 200%;
   }
-  
-  /* Apply loading skeleton styling to each child div */
-  .loading {
-    width: 90%;
-    height: 3rem ;/* Set the height of each loading div */
-    margin-top:2rem; /* Set the margin between loading divs */
-    background: linear-gradient(90deg, transparent, #f0f0f0, transparent); /* Shimmer effect */
-    border-radius: 1rem;
-    background-size: 200% 100%; /* Twice the width for the shimmer effect */
-    animation: shimmer 1.5s infinite; /* Apply shimmer animation */
+  100% {
+    background-position: -200%;
+  }
+}
+
+/* Apply loading skeleton styling to each child div */
+.loading {
+  width: 100%;
+  height: 3rem; /* Set the height of each loading div */
+  margin-top: 2rem; /* Set the margin between loading divs */
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #f0f0f0,
+    transparent
+  ); /* Shimmer effect */
+  border-radius: 1rem;
+  background-size: 200% 100%; /* Twice the width for the shimmer effect */
+  animation: shimmer 1.5s infinite; /* Apply shimmer animation */
+}
+
+.group:hover {
+  border-color: #2ca89d;
+  cursor: pointer;
+  width: 101%;
+}
+
+.bv {
+  background-color: #2ccfbf;
+  color: white;
+  padding: 0.5rem;
+}
+.sda .icon {
+  display: none;
+}
+
+@media screen and (max-width: 1000px) {
+  /* Landing Page */
+
+  .landpage .title {
+    font-size: 2rem;
+  }
+  .landpage .insight {
+    font-size: 1.3rem;
+    margin-top: 0.8rem;
+  }
+  .landpage .uppersvg {
+    height: 24rem;
+  }
+  .landpage .App {
+    font-size: 1rem;
+  }
+  .landpage .compbg {
+    width: 15rem;
+    padding: 0.6rem;
+    margin-top: 5rem;
+  }
+  .landpage .comp {
+  }
+  .landpage .phone {
+    height: 10rem;
+    margin-left: -5rem;
+  }
+  .landpage .fitness {
+    height: 8rem;
+    margin-right: -4rem;
+  }
+  .landpage .worldh {
+    height: 10rem;
+  }
+  .landpage .lowersvg {
+    padding-top: 1rem;
+  }
+  .landpage .startedbut {
+    margin-top: 1rem;
+  }
+  .landpage .content {
+    width: 95%;
+    display: block;
+  }
+  .landpage .flexitem {
+    width: 100%;
+    margin-top: 1rem;
   }
 
-  .group:hover{
-    border-color: #2ca89d;
+  /* Navbar */
+
+  .sda .icon {
+    display: block;
     cursor: pointer;
-    width: 101%;
+    padding-top: 0.8rem;
+    margin-right: 0;
+  }
+  .sda .icon .line {
+    width: 2.3rem;
+    height: 0.3rem;
+    background-color: black;
+    margin: 0.3rem 1rem;
+    border-radius: 0.1rem;
+  }
+
+  .sda .logo{
+    margin-left: 0;
+    margin-right: 2rem;
+  }
+  .sda .bv{
+    margin-right: 0;
+  }
+  .mainnavss.active {
+    display: none;
+  }
+  .mainnavss.false {
+    animation-name: slidetnav;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    z-index: 999;
+    position: fixed;
     
   }
-
-  .bv{
-    background-color: #2CCFBF;
-    color: white;
-    padding: 0.5rem;
+ 
+  @keyframes slidetnav {
+    0% {
+      transform: translate(-20rem);
+    }
+    100% {
+      transform: translate();
+      
+    }
   }
+  /* SignInPage */
+  .mainsigninpage .signinform {
+    width: 90%;
+  }
+/*   
+  Newspage */
+
+  .mmpage .mapss{
+    position: relative;
+    right:0;
+    left: 0;
+    margin-left: 0;
+    width: 100%;
+  }
+  .maps2{
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+  }
+  .AQ{
+    width: 100%;
+    margin-left: 0;
+    margin-top: 2rem;
+    display: block;
+    
+  }
+  .prevdis{
+    width: 100%;
+    margin-left: 0;
+    
+  }
+  .responselink{
+    position: relative;
+    right: 0;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .varynice {
+    width: 100%;
+    margin-top: 1rem;
+
+  }
+  .varynice .asdf {
+    margin-left: 0;
+  }
+  .varynice .symptoms{
+    margin-left: 0;
+  }
+
+
+  /* volunteer */
+  .signinform{
+    margin-left: 0;
+    margin-top: 5rem;
+  }
+
+  .vols {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+  .volsg{
+    width: 100%;
+    padding: 0;
+
+  }
+  .volind{
+      margin: 0;
+      margin-top: 1rem;
+  }
+
+  /* hospitalmap */
+
+  .hmap{
+    margin-left: auto;
+    margin-right: auto;
+    width: 98%;
+    margin-top: 5rem;
+    height: 40rem;
+  }
+
+  /* community chat */
+
+}

@@ -19,30 +19,30 @@ const Landing = () => {
   return (
     <div className="landpage w-screen h-screen font-custom text-xl font-semibold  ">
       <div className="uppersvg h-80 pt-1">
-        <h1 className="font-Danc text-5xl italic text-white text-center mt-8  ">Geo Health</h1>
-        <h1 className="font-Nan text-white text-center mt-8 text-4xl">Where Insights and Interaction Converge</h1>
+        <h1 className="title font-Danc text-5xl italic text-white text-center mt-8  ">Geo Health</h1>
+        <h1 className="insight font-Nan text-white text-center mt-8 text-4xl">Where Insights and Interaction Converge</h1>
         
         <div className='App font-Rubik text-white text-center mt-2 text-xl'>
           <span>{text}</span>
           <Cursor cursorColor='white' />
         </div>
         <NavLink to="/signin" className="w-40 m-auto" >
-          <div className="bg-white pt-2 mt-10 text-center w-40 h-12 z-100 rounded-full shadow-md">
+          <div className="startedbut bg-white pt-2 mt-10 text-center w-40 h-12 z-100 rounded-full shadow-md">
             <h1 className="text-gray-600">Get Started</h1>
           </div>
         </NavLink>
       </div>
 
       <div className="lowersvg h-max w-screen p-1  ">
-        <img data-aos="fade-up-right" src="./worldh.png" className=" m-auto ml-[58%] -mb-32 -mt-40 relative drop-shadow-xl " alt="" />
+        <img data-aos="fade-up-right" src="./worldh.png" className="worldh m-auto ml-[58%] -mb-32 -mt-40 relative drop-shadow-xl " alt="" />
         <div className="-z-30  flex justify-center">
-          <img data-aos="zoom-in" src="./fitness.png" className="h-96 drop-shadow-4xl -mr-[6.7rem] z-20 " alt="" />
-          <div className=" w-auto h-max shadow-md p-6 bg-white z-10 relative rounded-2xl">
-            <img src="./mainbg.png" className="z-30 ml-auto mr-auto w-[40rem] rounded" alt="" />
+          <img data-aos="zoom-in" src="./fitness.png" className="fitness h-96 drop-shadow-4xl -mr-[6.7rem] z-20 " alt="" />
+          <div className="compbg w-auto h-max shadow-md p-6 bg-white z-10 relative rounded-2xl">
+            <img src="./mainbg.png" className="comp z-30 ml-auto mr-auto w-[40rem] rounded" alt="" />
           </div>
           <img data-aos="fade-left"
      data-aos-offset="300"
-     src="./phone.png" className="h-96 drop-shadow-3xl -ml-40 z-20 mt-40" alt="" />
+     src="./phone.png" className="phone h-96 drop-shadow-3xl -ml-40 z-20 mt-40" alt="" />
         </div>
 
       </div>

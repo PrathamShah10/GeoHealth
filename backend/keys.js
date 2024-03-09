@@ -1,1 +1,1 @@
-export const MONGO_PASS = "gOyP4QLKGtWvos7Q";
+export const MONGO_PASS = "AmCIHBV6anuyfVuK";

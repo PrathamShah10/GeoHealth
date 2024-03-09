@@ -35,12 +35,14 @@ const SearchVolunteers = () => {
     setTimeout(() => {
       setVolunteers(data?.getAllVolunteers);
       setFilteredVolunteers(data?.getAllVolunteers);
+      console.log(data?.getAllVolunteers)
     }, 500);
   }, [nearestState, getVolunteers, data?.getAllVolunteers]);
   const handleFilter = (e: any) => {
     const s = e.target.value;
     if (s === "All") {
       setFilteredVolunteers(volunteers);
+      
     } else {
       setFilteredVolunteers(
         volunteers.filter((item: any) => item.languages.includes(s))
@@ -50,7 +52,7 @@ const SearchVolunteers = () => {
   return (
     <div className="mmpage">
       <div className="mainpage w-screen font-Rubik min-h-screen backdrop-blur-md p-1">
-        <div className="w-9/12 bg-white ml-auto mr-10 relative rounded-md min-h-[30rem] shadow-md mt-28 h-auto p-5">
+        <div className="vols w-9/12 bg-white ml-auto mr-10 relative rounded-md min-h-[30rem] shadow-md mt-28 h-auto p-5">
           <h1 className="text-3xl font-extrabold text-gray-600">Volunteers</h1>
           <p className="p-2">Filter <select className=" border-2 rounded-md " onChange={handleFilter}>
             <option value="All" key={100}>
@@ -65,15 +67,16 @@ const SearchVolunteers = () => {
             })}
           </select></p>
           
-          <div>
+          <div className="volsg">
             {filteredVolunteers?.map((v: any, i: any) => {
               return (
                 <div
                   key={i}
-                  className="mb-4 mt-4 p-4 bg-gray-100 mx-10 rounded-lg shadow-md"
+                  className="volind mb-4 mt-4 p-4 bg-gray-100 mx-10 rounded-lg shadow-md"
                 >
                   <div className="text-xl font-semibold mb-2">Name - {v.name}</div>
                   <div className="text-gray-600 mb-2">Contact : {v.contact}</div>
+                  <div className="text-gray-600 mb-2">Desc: {v.desc}</div>
                   <div className="flex">
                     <div className="text-gray-600 mr-2 mt-1">Languages:</div>
                     <div className="flex flex-wrap">

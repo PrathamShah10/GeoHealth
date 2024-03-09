@@ -30,7 +30,7 @@ io.on("connection", (socket) => {
 });
 // mongodb+srv://prathamgaming2001:${MONGO_PASS}@cluster0.9amufvz.mongodb.net/?retryWrites=true&w=majority
 mongoose.connect(
-  `mongodb://0.0.0.0/geoHealthDB`,
+  `mongodb+srv://padamadansamuel:${MONGO_PASS}@geohealthdb.ivdqyar.mongodb.net/?retryWrites=true&w=majority&appName=GeoHealthDB`,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
