@@ -48,7 +48,7 @@ const SearchVolunteers = () => {
     }
   };
   return (
-    <div className="p-4 rounded shadow-md">
+    <div className="h-screen flex items-center justify-center p-4 rounded shadow-md">
       <div className="text-2xl font-bold mb-4">Volunteers List</div>
       <select onChange={handleFilter}>
         <option value="All" key={100}>

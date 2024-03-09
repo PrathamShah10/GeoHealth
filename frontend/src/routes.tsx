@@ -20,6 +20,7 @@ import StoreFile from "./components/StoreFile";
 import GetFiles from "./components/GetFiles";
 import HospitalRegistration from "./components/HospitalRegister";
 import GetNearbyHospitals from "./components/GetNearbyHospitals";
+import PostDisease from "./components/Diet_Rec";
 
 export const routes: RouteObject[] = [
   {
@@ -99,7 +100,15 @@ export const routes: RouteObject[] = [
     element: <HospitalRegistration />,
   },
   {
-    path: '/nearby-hospitals',
+    path: "/nearby-hospitals",
     element: <PrivateRoute element={GetNearbyHospitals} />,
-  }
+  },
+  {
+    path: "/diet-rec",
+    element: <PrivateRoute element={PostDisease} />,
+  },
+  {
+    path: "/send-file/:hospitalId",
+    element: <PrivateRoute element={GetFiles} props={{ toSend: true }} />,
+  },
 ];

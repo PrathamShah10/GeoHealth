@@ -18,6 +18,7 @@ type Mutation {
     updateUserProfile(userDetails: updatedUserInput): User
     addChats(chatDetails: chatInput!): String
     addFile(fileDetails: fileInput!): String
+    addFileToHospital(fileData: fileDataInput!): String
 }
 
 
@@ -53,6 +54,7 @@ type Hospital {
     speciality:  String
     latitude: Float
     longitude: Float
+    _id: String
 }
 input signInput {
     username: String!
@@ -89,6 +91,10 @@ input fileInput {
     fileName: String!
     fileHash: String!
     userId: String!
+}
+input fileDataInput {
+    fileHashes: [String]!
+    hospitalId: String!
 }
 input hospitalInput {
     name: String!

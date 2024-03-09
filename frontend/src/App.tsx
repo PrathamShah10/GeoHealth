@@ -7,6 +7,7 @@ import "./App.css";
 import { routes } from "./routes";
 import Navbar from "./components/Navbar";
 import VNavbar from "./components/VNavbar";
+import DietRec from "./components/Diet_Rec";
 
 function App() {
   const element = useRoutes(routes);
@@ -17,6 +18,7 @@ function App() {
         <PersistGate loading={null} persistor={persistor}>
           <Navbar />
           <VNavbar />
+          {/* <DietRec /> */}
           {element}
         </PersistGate>
       </Provider>

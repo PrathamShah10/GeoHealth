@@ -40,7 +40,7 @@ const PersonalHealth = ({ data, setData, type }: IPersonalHealth) => {
   }, []);
   const { user, diseases } = useAppSelector((state) => state.user);
   const [selectedDiseases, setSelectedDiseases] = useState<string[]>(
-    diseases || []
+    setData ? [] : (diseases || [])
   );
   const dispatch = useAppDispatch();
   const handleAddDisease = () => {
@@ -53,7 +53,6 @@ const PersonalHealth = ({ data, setData, type }: IPersonalHealth) => {
       setData(selectedDiseases);
     }
   };
-  console.log("ztx", useConstant);
   return (
     <>
       <div className="">
@@ -76,7 +75,7 @@ const PersonalHealth = ({ data, setData, type }: IPersonalHealth) => {
           </div>
           <div className="w-1/2 h-[30rem] mx-auto mt-8 p-4 bg-gray-100 rounded shadow">
             {/* <h2 className="text-xl font-semibold mb-4"> */}
-              List of {type || "diseases"}
+            List of {type || "diseases"}
             {/* </h2> */}
             <div className="mb-4">
               <label className="block text-sm font-medium text-gray-600">

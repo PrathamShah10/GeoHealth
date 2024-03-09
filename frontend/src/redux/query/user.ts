@@ -100,6 +100,12 @@ export const GET_NEARBY_HOSPTIALS = gql`
       speciality
       latitude
       longitude
+      _id
     }
+  }
+`;
+export const ADD_FILES_TO_HOSPITAL = gql`
+  mutation addFileToHospital($fileData: fileDataInput!) {
+    addFileToHospital(fileData: $fileData)
   }
 `;

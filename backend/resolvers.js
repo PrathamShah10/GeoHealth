@@ -41,6 +41,7 @@ export const resolvers = {
     },
     getNearbyHospitals: async (_, { locationDetails }) => {
       const hospitals = await Hospital.find();
+      return hospitals; //
       const hospitalsWithin3km = hospitals.filter((hospital) => {
         const distance = calculateDistance(
           locationDetails.latitude,
@@ -127,6 +128,22 @@ export const resolvers = {
       });
       await newFile.save();
       return "successful";
+    },
+    addFileToHospital: async (_, { fileData }) => {
+      try {
+        const { fileHashes, hospitalId } = fileData;
+        const result = await mongoose
+          .model("File")
+          .updateMany(
+            { fileHash: { $in: fileHashes } },
+            { $addToSet: { sentTo: hospitalId } }
+          );
+        console.log(result);
+        return "successful";
+      } catch (error) {
+        console.error(error);
+        throw error;
+      }
     },
   },
 };

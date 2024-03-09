@@ -41,6 +41,29 @@ const VNavbar = () => {
                     <img className="h-6 m-3" src="./hospital.png" alt="" />
                     <h1 className="pl-1 pt-3 pb-3 font-medium text-base tracking-tight">Nearby Hospital</h1>
                 </NavLink>
+
+                <NavLink to="/mlmodel"  className="w-11/12 ml-3 flex rounded hover:bg-gray-100  mt-1.5 ">
+                    <img className="h-6 m-3" src="./hospital.png" alt="" />
+                    <h1 className="pl-1 pt-3 pb-3 font-medium text-base tracking-tight">ML Model</h1>
+                </NavLink>
+
+
+                <NavLink to="/add- file"  className="w-11/12 ml-3 flex rounded hover:bg-gray-100  mt-1.5 ">
+                    <img className="h-6 m-3" src="./hospital.png" alt="" />
+                    <h1 className="pl-1 pt-3 pb-3 font-medium text-base tracking-tight">Upload Docs</h1>
+                </NavLink>
+
+
+                <NavLink to="/get-files"  className="w-11/12 ml-3 flex rounded hover:bg-gray-100  mt-1.5 ">
+                    <img className="h-6 m-3" src="./hospital.png" alt="" />
+                    <h1 className="pl-1 pt-3 pb-3 font-medium text-base tracking-tight">View Docs Sir</h1>
+                </NavLink>
+
+
+                <NavLink to="/nearby-hospitals"  className="w-11/12 ml-3 flex rounded hover:bg-gray-100  mt-1.5 ">
+                    <img className="h-6 m-3" src="./hospital.png" alt="" />
+                    <h1 className="pl-1 pt-3 pb-3 font-medium text-base tracking-tight">Send Docs</h1>
+                </NavLink>
                 <div 
                 className="cursor-pointer w-11/12 ml-3 flex rounded hover:bg-gray-100 bottom-3 absolute "
                 onClick={() => {
