@@ -1,8 +1,30 @@
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import { JWT_SECRET } from "./keys.js";
 const User = mongoose.model("User");
 const Chat = mongoose.model("Chat");
+const File = mongoose.model("File");
+const Hospital = mongoose.model("Hospital");
+
+const { PI, cos, sin, sqrt, atan2 } = Math;
+const deg2rad = (degrees) => degrees * (PI / 180);
+const earthRadiusKm = 6371;
+
+// Function to calculate distance between two points in kilometers
+const calculateDistance = (lat1, lon1, lat2, lon2) => {
+  const dLat = deg2rad(lat2 - lat1);
+  const dLon = deg2rad(lon2 - lon1);
+
+  const a =
+    sin(dLat / 2) * sin(dLat / 2) +
+    cos(deg2rad(lat1)) * cos(deg2rad(lat2)) * sin(dLon / 2) * sin(dLon / 2);
+
+  const c = 2 * atan2(sqrt(a), sqrt(1 - a));
+
+  return earthRadiusKm * c * 1000; // Distance in meters
+};
+
 export const resolvers = {
   Query: {
     getUsers: async () => {
@@ -12,7 +34,25 @@ export const resolvers = {
       return await Chat.find({ community });
     },
     getAllVolunteers: async (_, { community }) => {
-      return await User.find({ community }) .select('name languages contact');
+      return await User.find({ community }).select("name languages contact");
+    },
+    getUserFiles: async (_, { id }) => {
+      return await File.find({ userId: id }).select("-userId");
+    },
+    getNearbyHospitals: async (_, { locationDetails }) => {
+      const hospitals = await Hospital.find();
+      return hospitals; //
+      const hospitalsWithin3km = hospitals.filter((hospital) => {
+        const distance = calculateDistance(
+          locationDetails.latitude,
+          locationDetails.longitude,
+          hospital.latitude,
+          hospital.longitude
+        );
+        return distance <= 3000;
+      });
+      console.log("Hospitals within 3km:", hospitalsWithin3km);
+      return hospitalsWithin3km;
     },
   },
   Mutation: {
@@ -38,6 +78,12 @@ export const resolvers = {
       user.desc = volunteerDetails.desc;
       await user.save();
     },
+    addHospital: async (_, { hospitalDetails }) => {
+      const newHospital = await new Hospital({
+        ...hospitalDetails,
+      });
+      await newHospital.save();
+    },
     signInUser: async (_, { signDetails }) => {
       const user = await User.findOne({ username: signDetails.username });
       if (!user) {
@@ -50,7 +96,7 @@ export const resolvers = {
       if (!equality) {
         throw new Error("crediantials invalid");
       }
-      const token = jwt.sign({ userId: user._id }, "Az!@#$%bd1_@]_b");
+      const token = jwt.sign({ userId: user._id }, JWT_SECRET);
       return { token: token, userDetails: user };
     },
     updateDiseasesInfo: async (_, { diseaseDetails }) => {
@@ -76,6 +122,29 @@ export const resolvers = {
       });
       await newChats.save();
       return "successful";
+    },
+    addFile: async (_, { fileDetails }) => {
+      const newFile = await new File({
+        ...fileDetails,
+      });
+      await newFile.save();
+      return "successful";
+    },
+    addFileToHospital: async (_, { fileData }) => {
+      try {
+        const { fileHashes, hospitalId } = fileData;
+        const result = await mongoose
+          .model("File")
+          .updateMany(
+            { fileHash: { $in: fileHashes } },
+            { $addToSet: { sentTo: hospitalId } }
+          );
+        console.log(result);
+        return "successful";
+      } catch (error) {
+        console.error(error);
+        throw error;
+      }
     },
   },
 };

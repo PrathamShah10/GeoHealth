@@ -1,8 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import Dropdown from "../common/Dropdown";
 import { IDropdown } from "../interface/user";
-import VNavbar from "./VNavbar";
 import { useAppSelector } from "../hooks/redux";
 import Maps from "./Maps";
 import AirQuality from "./AirQuality";
@@ -12,7 +9,6 @@ const Newspage = () => {
   const [status, setStatus] = useState<string>("");
   const [city, setCity] = useState<string>("");
   const [responseArray, setResponseArray] = useState<string[] | null>(null);
-  const { user } = useAppSelector((state) => state.user);
   const [showdata, setShowdata] = useState(false);
   const [diseaseinfo, setDiseaseInfo] = useState("");
   const [query, setQuery] = useState("/");
@@ -28,7 +24,6 @@ const Newspage = () => {
     lng: 77.1734,
   });
   const [isMapBig, setIsMapBig] = useState(true);
-  const zoomlevel = 10.5;
   const findMyCity = async () => {
     const success = (position: GeolocationPosition) => {
       console.log(position);
