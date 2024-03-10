@@ -22,7 +22,7 @@ const GetFiles = ({ toSend }: GetFilesProps) => {
     };
     getUserFiles();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [getFilesww, user]);
+  }, []);
 
   useEffect(() => {
     setUserFiles(data?.getUserFiles);

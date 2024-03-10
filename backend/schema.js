@@ -8,19 +8,20 @@ type Query {
     getAllVolunteers(community: String!): [Volunteer]
     getUserFiles(id:String!): [files]
     getNearbyHospitals(locationDetails: locationInput!): [Hospital]
+    getHospitalFiles(hospitalId: String!): [files]
 }
 type Mutation {
     addUser(newUserDetails: UserInput!) : User
     addVolunteer(volunteerDetails: volunteerInput!): Volunteer
     addHospital(hospitalDetails: hospitalInput!): String
     signInUser(signDetails: signInput!): UserToken
+    signInHospital(signDetails: hospitalsignInput!): hospitalToken
     updateDiseasesInfo(diseaseDetails: diseaseInput!): User
     updateUserProfile(userDetails: updatedUserInput): User
     addChats(chatDetails: chatInput!): String
     addFile(fileDetails: fileInput!): String
     addFileToHospital(fileData: fileDataInput!): String
 }
-
 
 type User {
     _id: ID!
@@ -29,6 +30,13 @@ type User {
     username: String
     password: String
     diseases: [String]
+}
+type Hospital {
+    name: String
+    speciality:  String
+    latitude: Float
+    longitude: Float
+    _id: String
 }
 type Volunteer {
     name: String
@@ -41,6 +49,10 @@ type UserToken {
     token: String
     userDetails: User
 }
+type hospitalToken {
+    token: String
+    userDetails: Hospital
+}
 type chats {
     sender: String
     senderName: String
@@ -49,17 +61,14 @@ type chats {
 type files {
     fileName: String
     fileHash: String
-}
-type Hospital {
-    name: String
-    speciality:  String
-    latitude: Float
-    longitude: Float
-    _id: String
+    userId: String
 }
 input signInput {
     username: String!
     password: String!
+}
+input hospitalsignInput {
+    name: String!
 }
 input volunteerInput {
     _id: ID!

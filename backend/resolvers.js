@@ -54,6 +54,14 @@ export const resolvers = {
       console.log("Hospitals within 3km:", hospitalsWithin3km);
       return hospitalsWithin3km;
     },
+    getHospitalFiles: async (_, { hospitalId }) => {
+      try {
+        return await File.find({ sentTo: hospitalId });
+      } catch (err) {
+        console.error(err);
+        throw new Error("server error");
+      }
+    },
   },
   Mutation: {
     addUser: async (_, { newUserDetails }) => {
@@ -87,7 +95,7 @@ export const resolvers = {
     signInUser: async (_, { signDetails }) => {
       const user = await User.findOne({ username: signDetails.username });
       if (!user) {
-        throw new Error("crediantials invalid");
+        return { error: "crediantials invalid" };
       }
       const equality = await bcrypt.compare(
         signDetails.password,
@@ -96,6 +104,21 @@ export const resolvers = {
       if (!equality) {
         throw new Error("crediantials invalid");
       }
+      const token = jwt.sign({ userId: user._id }, JWT_SECRET);
+      return { token: token, userDetails: user };
+    },
+    signInHospital: async (_, { signDetails }) => {
+      const user = await Hospital.findOne({ name: signDetails.name });
+      if (!user) {
+        throw new Error("crediantials invalid");
+      }
+      // const equality = await bcrypt.compare(
+      //   signDetails.password,
+      //   user.password
+      // );
+      // if (!equality) {
+      //   throw new Error("crediantials invalid");
+      // }
       const token = jwt.sign({ userId: user._id }, JWT_SECRET);
       return { token: token, userDetails: user };
     },

@@ -21,6 +21,8 @@ import GetFiles from "./components/GetFiles";
 import HospitalRegistration from "./components/HospitalRegister";
 import GetNearbyHospitals from "./components/GetNearbyHospitals";
 import PostDisease from "./components/Diet_Rec";
+import HospitalLogin from "./components/HospitalLogin";
+import HospitalHome from "./components/HospitalHome";
 
 export const routes: RouteObject[] = [
   {
@@ -80,6 +82,10 @@ export const routes: RouteObject[] = [
     element: <PrivateRoute element={HospitalFinder} />,
   },
   {
+    path: "/hospital-signin",
+    element: <HospitalLogin />,
+  },
+  {
     path: "/x",
     element: <PrivateRoute element={UserDocumentsInput} />,
   },
@@ -110,5 +116,9 @@ export const routes: RouteObject[] = [
   {
     path: "/send-file/:hospitalId",
     element: <PrivateRoute element={GetFiles} props={{ toSend: true }} />,
+  },
+  {
+    path: "/hospital-home",
+    element: <HospitalHome />,
   },
 ];

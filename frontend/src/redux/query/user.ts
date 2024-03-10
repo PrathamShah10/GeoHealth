@@ -26,6 +26,17 @@ export const SIGNIN_USER = gql`
   }
 `;
 
+export const SIGNIN_HOSPITAL = gql`
+  mutation SignIn($signDetails: hospitalsignInput!) {
+    signInHospital(signDetails: $signDetails) {
+      token
+      userDetails {
+        _id
+      }
+    }
+  }
+`;
+
 export const UPDATE_DISEASES = gql`
   mutation DiseaseUpdate($diseaseDetails: diseaseInput!) {
     updateDiseasesInfo(diseaseDetails: $diseaseDetails) {
@@ -109,5 +120,15 @@ export const GET_NEARBY_HOSPTIALS = gql`
 export const ADD_FILES_TO_HOSPITAL = gql`
   mutation addFileToHospital($fileData: fileDataInput!) {
     addFileToHospital(fileData: $fileData)
+  }
+`;
+
+export const GET_ALL_HOSPITAL_FILES = gql`
+  query getHospitalFiles($hospitalId: String!) {
+    getHospitalFiles(hospitalId: $hospitalId) {
+      fileName
+      fileHash
+      userId
+    }
   }
 `;
