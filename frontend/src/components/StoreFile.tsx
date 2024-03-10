@@ -16,6 +16,7 @@ const StoreFile: React.FC = () => {
   };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    console.log('andar')
     event.preventDefault();
     if (!file) {
       console.error("No file selected");

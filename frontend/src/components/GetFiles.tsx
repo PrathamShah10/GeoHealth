@@ -17,11 +17,12 @@ const GetFiles = ({ toSend }: GetFilesProps) => {
         variables: {
           id: user?._id,
         },
+        fetchPolicy: "network-only",
       });
     };
     getUserFiles();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [getFilesww, user]);
+  }, []);
 
   useEffect(() => {
     setUserFiles(data?.getUserFiles);
