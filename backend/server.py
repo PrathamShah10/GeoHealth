@@ -4,6 +4,7 @@ import sklearn
 from sklearn.neighbors import NearestNeighbors
 from collections import Counter
 from flask_cors import CORS
+from flask_socketio import SocketIO
 
 import warnings
 warnings.filterwarnings('ignore')
@@ -143,4 +144,4 @@ def send_dishes():
         json_array
     }
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run(port=9000)

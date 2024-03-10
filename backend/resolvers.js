@@ -34,7 +34,7 @@ export const resolvers = {
       return await Chat.find({ community });
     },
     getAllVolunteers: async (_, { community }) => {
-      return await User.find({ community }).select("name languages contact");
+      return await User.find({ community }).select("name languages contact desc");
     },
     getUserFiles: async (_, { id }) => {
       return await File.find({ userId: id }).select("-userId");

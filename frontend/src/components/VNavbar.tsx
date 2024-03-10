@@ -25,71 +25,54 @@ const VNavbar = (props) => {
               <h1 className="ml-4 text-lg font-medium">GeoHealth</h1>
             </div>
 
-            <NavLink
-              to="/newspage"
-              // onClick={props.handleShowvNavbar}
-              className="w-11/12 ml-3 flex hover:pl-2 hover:mr-2 rounded hover:bg-gray-100 mt-1.5 "
-            >
-              <img className="h-6 m-3" src="./locality.png" alt="" />
-              <h1 className="text-base text-gray-700  pt-3 pb-3 tracking-tight font-medium ">
-                Local Health
-              </h1>
-            </NavLink>
+                <NavLink to="/newspage" className="w-11/12 ml-3 flex hover:pl-2 hover:mr-2 rounded hover:bg-gray-100 mt-1.5 " >
+                    <img className="h-6 m-3" src="./locality.png" alt="" />
+                    <h1 className="text-base text-gray-700  pt-3 pb-3 tracking-tight font-medium ">Local Health</h1>
+                </NavLink>
+               
+                {/* <NavLink to="/health-data" className="w-11/12 ml-3 flex hover:pl-2 hover:mr-2 rounded hover:bg-gray-100 mt-1.5 " >
+                    <img className="h-6 m-3" src="./diseases.png" alt="" />
+                    <h1 className="text-base text-gray-700  pt-3 pb-3 tracking-tight font-medium ">Disease History</h1>
+                </NavLink> */}
+               
+                {/* <NavLink to="/food"  className="w-11/12 ml-3 flex hover:bg-gray-100 rounded mt-1.5">
+                    <img className="h-6 m-3" src="./restaurant.png" alt="" />
+                    <h1 className="pt-3 pb-3  font-medium text-base tracking-tight">Dishes</h1>
+                </NavLink> */}
+                
+                <NavLink to="/community-chat"  className="w-11/12 ml-3 flex rounded hover:bg-gray-100 mt-1.5">
+                    <img className="h-6 m-3" src="./chat.png" alt="" />
+                    <h1 className=" pt-3 pb-3 font-medium text-base tracking-tight">Community Chat</h1>
+                </NavLink>
+                
+                <NavLink to="/hospital"  className="w-11/12 ml-3 flex rounded hover:bg-gray-100  mt-1.5 ">
+                    <img className="h-6 m-3" src="./hospital.png" alt="" />
+                    <h1 className="pl-1 pt-3 pb-3 font-medium text-base tracking-tight">Nearby Hospital</h1>
+                </NavLink>
+                <NavLink to="/search-volunteer"  className="w-11/12 ml-3 flex rounded hover:bg-gray-100  mt-1.5 ">
+                    <img className="h-6 m-3" src="./hospital.png" alt="" />
+                    <h1 className="pl-1 pt-3 pb-3 font-medium text-base tracking-tight">Search Volunteer</h1>
+                </NavLink>
 
-            <NavLink
-              to="/health-data"
-              // onClick={props.handleShowvNavbar}
-              className="w-11/12 ml-3 flex hover:pl-2 hover:mr-2 rounded hover:bg-gray-100 mt-1.5 "
-            >
-              
-              <img className="h-6 m-3" src="./diseases.png" alt="" />
-              <h1 className="text-base text-gray-700  pt-3 pb-3 tracking-tight font-medium ">
-                Disease History
-              </h1>
-            </NavLink>
+                <NavLink to="/mlmodel"  className="w-11/12 ml-3 flex rounded hover:bg-gray-100  mt-1.5 ">
+                    <img className="h-6 m-3" src="./hospital.png" alt="" />
+                    <h1 className="pl-1 pt-3 pb-3 font-medium text-base tracking-tight">ML Model</h1>
+                </NavLink>
 
-            <NavLink
-              to="/food"
-              // onClick={props.handleShowvNavbar}
-              className="w-11/12 ml-3 flex hover:bg-gray-100 rounded mt-1.5"
-            >
-              <img className="h-6 m-3" src="./restaurant.png" alt="" />
-              <h1 className="pt-3 pb-3  font-medium text-base tracking-tight">
-                Dishes
-              </h1>
-            </NavLink>
 
-            <NavLink
-              to="/community-chat"
-              // onClick={props.handleShowvNavbar}
-              className="w-11/12 ml-3 flex rounded hover:bg-gray-100 mt-1.5"
-            >
-              <img className="h-6 m-3" src="./chat.png" alt="" />
-              <h1 className=" pt-3 pb-3 font-medium text-base tracking-tight">
-                Community Chat
-              </h1>
-            </NavLink>
+                <NavLink to="/add- file"  className="w-11/12 ml-3 flex rounded hover:bg-gray-100  mt-1.5 ">
+                    <img className="h-6 m-3" src="./hospital.png" alt="" />
+                    <h1 className="pl-1 pt-3 pb-3 font-medium text-base tracking-tight">Upload Docs</h1>
+                </NavLink>
 
-            <NavLink
-              to="/hospital"
-              // onClick={props.handleShowvNavbar}
-              className="w-11/12 ml-3 flex rounded hover:bg-gray-100  mt-1.5 "
-            >
-              <img className="h-6 m-3" src="./hospital.png" alt="" />
-              <h1 className="pl-1 pt-3 pb-3 font-medium text-base tracking-tight">
-                Nearby Hospital
-              </h1>
-            </NavLink>
-            <NavLink
-            // onClick={props.handleShowvNavbar}
-              to="/search-volunteer"
-              className="w-11/12 ml-3 flex rounded hover:bg-gray-100  mt-1.5 "
-            >
-              <img className="h-6 m-3" src="./volunteer.png" alt="" />
-              <h1 className="pl-1 pt-3 pb-3 font-medium text-base tracking-tight">
-                Nearby Volunteer
-              </h1>
-            </NavLink>
+
+                <NavLink to="/get-files"  className="w-11/12 ml-3 flex rounded hover:bg-gray-100  mt-1.5 ">
+                    <img className="h-6 m-3" src="./hospital.png" alt="" />
+                    <h1 className="pl-1 pt-3 pb-3 font-medium text-base tracking-tight">View Docs Sir</h1>
+                </NavLink>
+
+
+                
             <div
               className="cursor-pointer w-11/12 ml-3 flex rounded hover:bg-gray-100 bottom-3 absolute "
               onClick={() => {

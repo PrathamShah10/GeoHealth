@@ -17,6 +17,7 @@ const GetFiles = ({ toSend }: GetFilesProps) => {
         variables: {
           id: user?._id,
         },
+        fetchPolicy: "network-only",
       });
     };
     getUserFiles();
