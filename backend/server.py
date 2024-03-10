@@ -4,7 +4,6 @@ import sklearn
 from sklearn.neighbors import NearestNeighbors
 from collections import Counter
 from flask_cors import CORS
-from flask_socketio import SocketIO
 
 import warnings
 warnings.filterwarnings('ignore')
@@ -130,9 +129,11 @@ def custom_converter(row):
 @app.route('/data', methods=['POST'])
 def send_dishes():
     user_id = 'User_71'
-    profiles = pd.read_csv('./dataset/user_Profiles.csv') # profiles of all users
-    recent_activity = pd.read_csv('./dataset/recent_activity.csv') # recent activities of current user (meals liked,rated,searched,Purchased)
-    dataset = pd.read_csv('./dataset/dataset.csv')
+    # profiles of all users
+    recent_activity = pd.read_csv('./backend/dataset/recent_activity.csv')
+    profiles = pd.read_csv('./backend/dataset/user_Profiles.csv') 
+
+    dataset = pd.read_csv('./backend/dataset/dataset.csv')
     diseases = request.json.get('diseases', [])
     ob = Recommender(profiles,recent_activity,dataset)
     result = ob.recommend(user_id,diseases)
@@ -144,4 +145,4 @@ def send_dishes():
         json_array
     }
 if __name__ == '__main__':
-    app.run(port=9000)
+    app.run(port=7000)

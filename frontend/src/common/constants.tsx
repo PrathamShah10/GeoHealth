@@ -1,5 +1,5 @@
 export const DiseasesData = [
-  [
+  
     "goitre",
     "kidney_disease",
     "pregnancy",
@@ -12,7 +12,7 @@ export const DiseasesData = [
     "anemia",
     "eye_disease",
     "cancer",
-  ],
+  
 ];
 
 export const indianStates = [

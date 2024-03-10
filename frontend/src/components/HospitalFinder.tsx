@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { REACT_APP_GOOGLE_MAPS_KEY } from '../common/keys'
 import { GoogleMap, useJsApiLoader, MarkerF, InfoWindowF } from '@react-google-maps/api';
 import HospitalMap from './HospitalMap';
+import GetNearbyHospitals from './GetNearbyHospitals';
 
 
 const HospitalFinder = () => {
@@ -133,7 +134,7 @@ const HospitalFinder = () => {
       <div className='mainpage w-screen font-Rubik backdrop-blur-sm overflow-hidden'>
         <div>
           {<HospitalMap userloc={userloc} convertedArray={convertedArray} />}
-
+         
 
         </div>
       </div>

@@ -18,7 +18,10 @@ const PersonalHealth = ({ data, setData, type }: IPersonalHealth) => {
       setUseConstant(thirdDD);
     } else {
       setUseConstant(DiseasesData);
+      
+      
     }
+    console.log(useConstant)
   }, [type]);
   useEffect(() => {
     const storedData = localStorage.getItem("myData");
@@ -51,21 +54,23 @@ const PersonalHealth = ({ data, setData, type }: IPersonalHealth) => {
 
     if (data) {
       setData(selectedDiseases);
+      console.log(selectedDiseases)
     }
   };
+ 
   return (
     <>
       <div className="">
-        {!data && <VNavbar />}
+        
         <div className=" ">
-          <div className="bg-white flex justify-between mx-auto h-40 rounded shadow-md ">
+          <div className=" ">
             {!data && (
               <div>
-                <h1 className="font-semibold p-4 text-2xl">
+                <h1 className="font-semibold text-2xl">
                   Personal Health Records
                 </h1>
 
-                <p className="font-normal pl-4 text-xl">
+                <p className="font-normal  text-xl">
                   Enter and update your health records to help us provide latest
                   information on diseases.
                 </p>
@@ -73,21 +78,22 @@ const PersonalHealth = ({ data, setData, type }: IPersonalHealth) => {
             )}
             {/* <img className="p-4 pr-10" src="./body-scan.png" alt="" /> */}
           </div>
-          <div className="w-1/2 h-[30rem] mx-auto mt-8 p-4 bg-gray-100 rounded shadow">
+          <div className="w-1/2 h-[15rem] p-4 bg-gray-100 rounded shadow">
             {/* <h2 className="text-xl font-semibold mb-4"> */}
-            List of {type || "diseases"}
+            List of {"diseases"}
             {/* </h2> */}
             <div className="mb-4">
               <label className="block text-sm font-medium text-gray-600">
-                Select {type || "diseases"}
+                Select {"diseases"}
               </label>
-              <Select
-                className="w-1/2"
+              <Select 
+                className="" 
                 isMulti
                 options={useConstant?.map((disease) => ({
                   value: disease,
                   label: disease,
                 }))}
+                
                 value={selectedDiseases?.map((disease) => ({
                   value: disease,
                   label: disease,

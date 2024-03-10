@@ -59,15 +59,23 @@ const StoreFile: React.FC = () => {
   };
 
   return (
-    <div className="h-screen w-full flex items-center justify-center">
-      <h1>Pin File to IPFS</h1>
+    <div className="fileuploads shadow-md p-10 w-11/12 rounded-lg">
+      
       <form onSubmit={handleSubmit}>
-        FileName: <input type="text" onChange={(e) => setFileName(e.target.value)} />
-        <input type="file" onChange={handleFileChange} />
-        <button type="submit">Submit</button>
+        File Name: <input type="text" className="w-1/6 bg-gray-100 border-2 rounded-md" onChange={(e) => setFileName(e.target.value)} />
+        <input type="file" style={dropzoneStyle} className="fileups mt-5 w-11/12 h-32 text-center " onChange={handleFileChange} />
+        <button className="w-40 ml-auto mr-auto bg-teal-400 mt-5 rounded-md text-white p-2 shadow-md" type="submit">Submit</button>
       </form>
     </div>
   );
+};const dropzoneStyle: React.CSSProperties = {
+  border: "2px dashed #ccc",
+  borderRadius: "4px",
+  padding: "20px",
+  paddingLeft: "40%",
+  paddingTop: "3rem",
+  cursor: "pointer",
+  
 };
 
 export default StoreFile;

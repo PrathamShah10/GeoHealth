@@ -16,7 +16,7 @@ function Navbar(props) {
   const navigate = useNavigate();
   const user = localStorage.getItem("user");
   return (
-    <div>
+    <div className="p-[0.1rem]">
       {user && (
         <div className="sda w-screen bg-white h-16 shadow-md flex justify-between">
           <div className="sda w-screen flex justify-between">

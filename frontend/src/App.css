@@ -158,6 +158,28 @@
   display: none;
 }
 
+.fileuploads input::file-selector-button {
+  border: none;
+  background-color: white;
+  text-align: center;
+  align-items: center;
+  content: "This text replaces the original.";
+  justify-content: center;
+  border-radius: 0.5rem;
+  
+}
+.fileuploads .fileups{
+    
+}
+.react-pdf__Page__canvas{
+  width: 4rem;
+  height: 2rem;
+}
+.react-pdf__Page canvas{  
+  width: 10rem;
+}
+
+
 @media screen and (max-width: 1000px) {
   /* Landing Page */
 
@@ -299,7 +321,10 @@
   .varynice .symptoms{
     margin-left: 0;
   }
-
+  .react-pdf__message.react-pdf__message--error{
+    visibility: hidden;
+    display: none;
+  }
 
   /* volunteer */
   .signinform{

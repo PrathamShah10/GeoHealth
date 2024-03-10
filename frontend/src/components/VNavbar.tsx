@@ -50,25 +50,25 @@ const VNavbar = (props) => {
                     <h1 className="pl-1 pt-3 pb-3 font-medium text-base tracking-tight">Nearby Hospital</h1>
                 </NavLink>
                 <NavLink to="/search-volunteer"  className="w-11/12 ml-3 flex rounded hover:bg-gray-100  mt-1.5 ">
-                    <img className="h-6 m-3" src="./hospital.png" alt="" />
+                    <img className="h-6 m-3" src="./volunteer.png" alt="" />
                     <h1 className="pl-1 pt-3 pb-3 font-medium text-base tracking-tight">Search Volunteer</h1>
                 </NavLink>
 
                 <NavLink to="/mlmodel"  className="w-11/12 ml-3 flex rounded hover:bg-gray-100  mt-1.5 ">
-                    <img className="h-6 m-3" src="./hospital.png" alt="" />
-                    <h1 className="pl-1 pt-3 pb-3 font-medium text-base tracking-tight">ML Model</h1>
+                    <img className="h-6 m-3" src="./nutrition.png" alt="" />
+                    <h1 className="pl-1 pt-3 pb-3 font-medium text-base tracking-tight">Personalized Diet</h1>
                 </NavLink>
 
 
-                <NavLink to="/add- file"  className="w-11/12 ml-3 flex rounded hover:bg-gray-100  mt-1.5 ">
-                    <img className="h-6 m-3" src="./hospital.png" alt="" />
-                    <h1 className="pl-1 pt-3 pb-3 font-medium text-base tracking-tight">Upload Docs</h1>
-                </NavLink>
+                {/* <NavLink to="/add- file"  className="w-11/12 ml-3 flex rounded hover:bg-gray-100  mt-1.5 ">
+                    <img className="h-6 m-3" src="./records.png" alt="" />
+                    <h1 className="pl-1 pt-3 pb-3 font-medium text-base tracking-tight">Medical Documents</h1>
+                </NavLink> */}
 
 
                 <NavLink to="/get-files"  className="w-11/12 ml-3 flex rounded hover:bg-gray-100  mt-1.5 ">
-                    <img className="h-6 m-3" src="./hospital.png" alt="" />
-                    <h1 className="pl-1 pt-3 pb-3 font-medium text-base tracking-tight">View Docs Sir</h1>
+                    <img className="h-6 m-3" src="./records.png" alt="" />
+                    <h1 className="pl-1 pt-3 pb-3 font-medium text-base tracking-tight">Records</h1>
                 </NavLink>
 
 

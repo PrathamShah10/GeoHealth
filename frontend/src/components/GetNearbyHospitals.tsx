@@ -5,6 +5,7 @@ import { GET_NEARBY_HOSPTIALS } from "../redux/query/user";
 const GetNearbyHospitals = () => {
   const [getHospitals, { data }] = useLazyQuery(GET_NEARBY_HOSPTIALS);
   const [hospitals, setHospitals] = useState<any>([]);
+
   useEffect(() => {
     const getAllNearbyHospitals = (latitude, longitude) => {
       getHospitals({
@@ -37,6 +38,10 @@ const GetNearbyHospitals = () => {
       setHospitals(data.getNearbyHospitals);
     }
   }, [data]);
+
+  useEffect(()=>{
+    console.log(hospitals)
+  },[hospitals])
   return (
     <div className="h-screen flex justify-center items-center">
       <div>
