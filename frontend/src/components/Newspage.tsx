@@ -200,7 +200,7 @@ const Newspage = () => {
                       </>
                     )}
                   </div>
-                  <div className="responselink -mt-60 absolute right-36 w-96 bg-white rounded-md p-4">
+                  <div className="responselink -mt-32 absolute right-36 w-96 bg-white rounded-md p-4">
                     <h1 className="text-xl font-bold text-gray-600 mb-4">
                       Top Latest Health Articles
                     </h1>
@@ -231,9 +231,9 @@ const Newspage = () => {
                       <div className="varynice w-3/6 ">
                         <div className="asdf flex  w-full shadow-md rounded-md relative z-14 text-lg cursor-pointer ml-16 p-2">
                           <h1
-                            className={`ml-6 p-2  text-white ${
+                            className={`ml-6 p-2  text-gray-600 ${
                               selectedTab === "about" &&
-                              "bg-white rounded-md text-black"
+                              "bg-white rounded-md text-gray-700"
                             }`}
                             onClick={() => {
                               setQuery("/");
@@ -243,7 +243,7 @@ const Newspage = () => {
                             About
                           </h1>
                           <h1
-                            className={`ml-6 p-2 text-white ${
+                            className={`ml-6 p-2 text-gray-600 ${
                               selectedTab === "prevention" &&
                               "bg-white  rounded-md text-black"
                             }`}
@@ -255,9 +255,9 @@ const Newspage = () => {
                             Prevention
                           </h1>
                           <h1
-                            className={`ml-6 p-2 text-white ${
+                            className={`ml-6 p-2 text-gray-600 ${
                               selectedTab === "symptoms" &&
-                              "bg-white  rounded-md text-black"
+                              "bg-white rounded-md text-black"
                             }`}
                             onClick={() => {
                               setQuery("/symptoms");

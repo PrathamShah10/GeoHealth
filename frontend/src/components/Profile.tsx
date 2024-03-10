@@ -66,6 +66,7 @@ const Profile = () => {
           ) : (
             <img className="mt-6" src="./profile.png" alt="Default Profile" />
           )} */}
+          <img src="./profile.png" alt="" />
           <h1 className="text-white font-bold text-2xl text-center mt-2">{user?.name}</h1>
         </div>
         <div className="p-6">

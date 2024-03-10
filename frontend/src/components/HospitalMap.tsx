@@ -25,7 +25,7 @@ const HospitalMap = ({userloc , convertedArray}) => {
   if (!isLoaded) return null;
   // Add userloc to the dependency array
   
-
+  console.log(convertedArray)
   
   
 

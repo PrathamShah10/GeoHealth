@@ -34,7 +34,7 @@ function VolunteerRegister() {
             languages: selectedLanguages,
             community: selectedCommunity,
             contact,
-            desc
+            desc,
           },
         },
       });
@@ -44,7 +44,7 @@ function VolunteerRegister() {
   return (
     <div className="mainsigninpage min-h-screen flex items-center justify-center">
       <div
-        className="signinform ml-10
+        className="signinform ml-10 mt-20
       w-4/6 p-6 bg-white rounded-lg shadow-lg"
       >
         <h2 className="text-2xl text-center font-semibold mb-6">

@@ -78,7 +78,7 @@ const PersonalHealth = ({ data, setData, type }: IPersonalHealth) => {
             )}
             {/* <img className="p-4 pr-10" src="./body-scan.png" alt="" /> */}
           </div>
-          <div className="w-1/2 h-[15rem] p-4 bg-gray-100 rounded shadow">
+          <div className="w-1/2 h-[15rem] p-4 bg-gray-50  rounded shadow">
             {/* <h2 className="text-xl font-semibold mb-4"> */}
             List of {"diseases"}
             {/* </h2> */}

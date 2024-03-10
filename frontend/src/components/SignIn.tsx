@@ -72,6 +72,11 @@ const SignIn = () => {
         <Link  to="/register">
           Dont Have an Account..? <span className="andu  text-sea-green-600 font-bold">Register</span> 
         </Link>
+        <div>
+          <Link  to="/hospital-signin">
+          Are you a Hospital..? <span className="andu  text-sea-green-600 font-bold">Login</span> 
+        </Link>
+        </div>
         </div>
       </div>
     </div>

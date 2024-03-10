@@ -4,7 +4,9 @@ import { useAppSelector } from "../hooks/redux";
 import axios from "axios";
 import { IPFS_KEY } from "../common/keys";
 import { ADD_FILE } from "../redux/query/user";
+import { toast } from "react-toastify";
 const StoreFile: React.FC = () => {
+  const notifyB = (msg) => toast.success(msg);
   const [file, setFile] = useState<File | null>(null);
   const [fileName, setFileName] = useState<string>("");
   const [addFile] = useMutation(ADD_FILE);
@@ -53,13 +55,16 @@ const StoreFile: React.FC = () => {
           },
         },
       });
+      notifyB(
+        "Document Uploaded Successfully"
+      );
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <div className="fileuploads shadow-md p-10 w-11/12 rounded-lg">
+    <div className="fileuploads shadow-md p-10 w-11/12 rounded-lg bg-white">
       
       <form onSubmit={handleSubmit}>
         File Name: <input type="text" className="w-1/6 bg-gray-100 border-2 rounded-md" onChange={(e) => setFileName(e.target.value)} />
